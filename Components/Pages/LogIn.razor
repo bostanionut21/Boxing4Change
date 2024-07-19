@@ -1,0 +1,108 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Components.Forms
+@inject NavigationManager Navigation
+@using Models
+@inject UserReq UserReqService
+
+<div class="parent_signin">
+    <div class="signin_signup">
+        <div class="signin" href="login">
+            Sign In
+        </div>
+        <div class="signup" href="signup" @onclick="NavigateToSignUp">
+            Sign up
+        </div>
+    </div>
+</div>
+
+<div class="Welcome_txt">
+    <div> Welcome to</div>
+    <div>Boxing 4 Change</div>
+</div>
+
+<div class="LogIn">
+    <EditForm Model="@loginModel" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group_login">
+            <InputText id="email" @bind-Value="loginModel.Email" class="form_control_login" placeholder="EMAIL" />
+            <ValidationMessage For="@(() => loginModel.Email)" />
+        </div>
+        <div class="form-group_login">
+            <InputText id="password" @bind-Value="loginModel.Password" type="password" class="form_control_login" placeholder="PASSWORD" />
+            <ValidationMessage For="@(() => loginModel.Password)" />
+        </div>
+        <div class="forgot">
+            <p href="">Forgot password?</p>
+        </div>
+        <button class="btn-primary_login" @onclick="LogInReq">Log in</button>
+    </EditForm>
+</div>
+@if(notFound==true)
+{
+    <p>Retry!!!</p>
+}
+
+@code {
+
+    private LoginModel loginModel = new LoginModel();
+    private bool notFound = false; 
+
+    private void HandleValidSubmit()
+    {
+        // Handle successful form submission, such as logging in the user.
+        Console.WriteLine($"Email: {loginModel.Email}, Password: {loginModel.Password}");
+    }
+
+    private async Task NavigateToSignUp()
+    {
+        try
+        {
+            Navigation.NavigateTo("signup");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Navigation error: {ex.Message}");
+        }
+    }
+
+    private async Task NavigateToEntrypage()
+    {
+        try
+        {
+            Navigation.NavigateTo("home");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Navigation error: {ex.Message}");
+        }
+    }
+
+    private async Task LogInReq()
+    {
+        try
+        {
+            var user = await UserReqService.GetUserAsync();
+
+            if (user != null)
+            {
+            }
+            else
+            {
+                notFound = true;
+                StateHasChanged();
+            }
+        }
+        catch (HttpRequestException httpEx)
+        {
+            Console.WriteLine($"Request error: {httpEx.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"General error: {ex.Message}");
+        }
+    }
+
+
+}
