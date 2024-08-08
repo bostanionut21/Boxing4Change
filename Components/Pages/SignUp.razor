@@ -1,48 +1,125 @@
 ﻿@page "/signup"
-
+@using Microsoft.AspNetCore.Components.Forms
+@inject NavigationManager Navigation
+@using Models
+@using Microsoft.AspNetCore.Authorization
+@inject UserReq UserReqService
 
 <div class="parent_signin2">
     <div class="signin_signup2">
-        <button class="signin" href="login">
+        <div class="signin2" href="login" @onclick="NavigateToSignIn">
             Sign In
-        </button>
-        <button class="signup">
+        </div>
+        <div class="signup2">
             Sign up
-        </button>
+        </div>
     </div>
 </div>
 
 <div class="Welcome_txt">
-    <div> Register</div>
+    <div>Register</div>
 </div>
 
-<div class="form-group">
-    <label for="name">Name</label>
-    <InputText id="name" class="form-control" />
-</div>
+<div class="SignUp">
+    <EditForm Model="@signUp" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group_signup">
+            <InputText id="email" @bind-Value="signUp.Email" class="form_control_signup" placeholder="EMAIL" />
+            <ValidationMessage For="() => signUp.Email" />
+        </div>
+        <div class="form-group_signup">
+            <InputText id="password" @bind-Value="signUp.Password" type="password" class="form_control_signup" placeholder="PASSWORD" />
+            <ValidationMessage For="() => signUp.Password" />
+        </div>
+        <div class="form-group_signup">
+            <InputText id="confirm_email" @bind-Value="password_confirm" type="password" class="form_control_signup" placeholder="PASSWORD CONFIRMATION" />
+            <ValidationMessage For="() => signUp.Password" />
+        </div>
+        <div class="form-group_signup">
+            <InputText id="first_name" @bind-Value="signUp.Surname" class="form_control_signup" placeholder="First Name" />
+            <ValidationMessage For="() => signUp.Surname" />
+        </div>
+        <div class="form-group_signup">
+            <InputText id="last_name" @bind-Value="signUp.Name" class="form_control_signup" placeholder="Last Name" />
+            <ValidationMessage For="() => signUp.Name" />
+        </div>
+        <div class="selector">
+            <label for="countrySelect">Country:</label>
+            <select id="countrySelect" @bind="signUp.Country" class="form-control">
+                @foreach (var country in countries)
+                {
+                    <option value="@country">@country</option>
+                }
+            </select>
+        </div>
+        <div class="button-group">
+            <button @onclick="() => SetRole(student)" class="button btn-student @(signUp.Role == "Student" ? "btn-primary" : "btn-secondary")">
+                Trainee
+            </button>
 
-<div class="form-group">
-    <label for="surname">Surname</label>
-    <InputText id="surname" class="form-control" />
-</div>
+            <button @onclick="() => SetRole(trainer)" class="button btn-trainer @(signUp.Role == "Trainer" ? "btn-primary" : "btn-secondary")">
+                Trainer
+            </button>
+        </div>
 
-<div class="form-group">
-    <label for="email">Email</label>
-    <InputText id="email" class="form-control" />
+        <button type="submit" class="btn-primary_signup">Submit</button>
+    </EditForm>
 </div>
-
-<div class="form-group">
-    <label for="country">Country</label>
-    <InputText id="country" class="form-control" />
-</div>
-
-<div class="form-group">
-    <label for="password">Password</label>
-    <InputText id="password" type="password" class="form-control" />
-</div>
-
-<button type="submit" class="btn btn-primary">Register</button>
 
 @code {
-    // Code-behind logic can be added here if needed
+    private SignupModel signUp = new()
+    {
+        Role = "Student",
+        Country = "Romania"
+    };
+    private bool notFound = false;
+    private string password_confirm { get; set; }
+    public string student = "Student";
+    public string trainer = "Trainer";
+
+    
+    private List<string> countries = new List<string>
+    {
+        "Romania",
+        "Italy",
+        "Spain"
+    };
+    
+    private void SetRole(string role)
+    {
+        signUp.Role = role;
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            await UserReqService.PostUserAsync(signUp);
+            Navigation.NavigateTo("confirm_email");
+        }
+        catch (HttpRequestException httpEx)
+        {
+            Console.WriteLine($"Request error: {httpEx.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"General error: {ex.Message}");
+        }
+    }
+
+    private void NavigateToSignIn()
+    {
+        try
+        {
+            Navigation.NavigateTo("/");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Navigation error: {ex.Message}");
+            // Handle the error as needed
+        }
+    }
+
+
 }

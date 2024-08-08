@@ -1,0 +1,18 @@
+﻿@page "/confirm_email"
+@using Microsoft.AspNetCore.Components.Forms
+@inject NavigationManager Navigation
+@using Models
+@using Microsoft.AspNetCore.Authorization
+@inject UserReq UserReqService
+@using System.Text.Json
+
+<h3>ConfirmEmail</h3>
+
+<p>Check youre inbox and confirm ypur email and log in again</p>
+<button @onclick="goLogin" >Go back</button>
+@code {
+    private void goLogin()
+    {
+        Navigation.NavigateTo("/");
+    }
+}

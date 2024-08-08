@@ -2,14 +2,15 @@
 @using Microsoft.AspNetCore.Components.Forms
 @inject NavigationManager Navigation
 @using Models
+@using Microsoft.AspNetCore.Authorization
 @inject UserReq UserReqService
 
 <div class="parent_signin">
     <div class="signin_signup">
-        <div class="signin" href="login">
+        <div class="signin">
             Sign In
         </div>
-        <div class="signup" href="signup" @onclick="NavigateToSignUp">
+        <div class="signup" @onclick="NavigateToSignUp">
             Sign up
         </div>
     </div>
@@ -26,11 +27,11 @@
         <ValidationSummary />
 
         <div class="form-group_login">
-            <InputText id="email" @bind-Value="loginModel.Email" class="form_control_login" placeholder="EMAIL" />
+            <InputText id="email" @bind-Value="email" class="form_control_login"  placeholder="EMAIL" />
             <ValidationMessage For="@(() => loginModel.Email)" />
         </div>
         <div class="form-group_login">
-            <InputText id="password" @bind-Value="loginModel.Password" type="password" class="form_control_login" placeholder="PASSWORD" />
+            <InputText id="password" @bind-Value="password" type="password" class="form_control_login" placeholder="PASSWORD" />
             <ValidationMessage For="@(() => loginModel.Password)" />
         </div>
         <div class="forgot">
@@ -43,19 +44,25 @@
 {
     <p>Retry!!!</p>
 }
+@if(emailNotVerified)
+{
+    <p>Email is not verified!</p>
+}
 
+@if (accessType == NetworkAccess.None)
+{
+    <p>Check internet connection!</p>
+}
 @code {
 
+    NetworkAccess accessType = Connectivity.Current.NetworkAccess;
     private LoginModel loginModel = new LoginModel();
-    private bool notFound = false; 
+    private bool notFound = false;
+    private string email { get; set; }
+    private string password { get; set; }
+    private bool emailNotVerified { get; set; } = false; 
 
-    private void HandleValidSubmit()
-    {
-        // Handle successful form submission, such as logging in the user.
-        Console.WriteLine($"Email: {loginModel.Email}, Password: {loginModel.Password}");
-    }
-
-    private async Task NavigateToSignUp()
+    private void NavigateToSignUp()
     {
         try
         {
@@ -66,32 +73,48 @@
             Console.WriteLine($"Navigation error: {ex.Message}");
         }
     }
-
-    private async Task NavigateToEntrypage()
+    private void HandleValidSubmit()
     {
-        try
-        {
-            Navigation.NavigateTo("home");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Navigation error: {ex.Message}");
-        }
+
     }
 
     private async Task LogInReq()
     {
         try
         {
-            var user = await UserReqService.GetUserAsync();
+            var user = await UserReqService.GetUserAsync(email,password);
 
             if (user != null)
             {
+                if(user.isVerified is true)
+                {
+                    if(user.Role == "Student")
+                    {
+                        Navigation.NavigateTo("student");
+                    }
+                    else
+                    if(user.Role == "Trainer")
+                    {
+                        Navigation.NavigateTo("trainer");
+                    }
+                }
+                else
+                {
+                    emailNotVerified = true;
+                    StateHasChanged();
+                }
             }
             else
             {
-                notFound = true;
-                StateHasChanged();
+                if (accessType == NetworkAccess.None)
+                {
+                    StateHasChanged();
+                }
+                else
+                {
+                    notFound = true;
+                    StateHasChanged();
+                }
             }
         }
         catch (HttpRequestException httpEx)

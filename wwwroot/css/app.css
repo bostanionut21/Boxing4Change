@@ -160,7 +160,7 @@ h1:focus {
         padding-left: 35px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
-
+    
     .form_control_login {
         height: 60px;
         width: 100%;
@@ -176,6 +176,15 @@ h1:focus {
             box-shadow: none; /* Removes any box shadow that might appear on focus */
             background: transparent; /* Keeps the background transparent */
             color: inherit; /* Inherits text color from the parent */
+            outline: none;
+        }
+
+        .LogIn .form-group_login input.form_control_login:valid {
+            outline: none;
+        }
+
+        .LogIn .form-group_login input.form_control_login:invalid {
+            outline: none;
         }
 
     .forgot {
@@ -205,69 +214,122 @@ h1:focus {
 
 
     /*signup*/
-    .form-container {
-        display: grid;
-        place-items: center;
-        margin-top: 10%;
+    .SignUp {
+        margin: 25px 10px 0 10px;
     }
 
-    .form-group {
-        margin-bottom: 20px;
-        margin-left:20px;
-        margin-top: 30px;
+    .form-group_signup {
+        width: 80%;
+        height: 60px;
+        margin: 35px 0 0 40px;
+        border: 1.2px solid #ccc;
+        border-radius: 12px;
+        font-size: 12px;
+        flex-direction: column;
+        padding-left: 35px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
-        .form-group label {
-            display: block;
-            font-family: roboto-bold;
-            font-size: 20px;
-            color: #000000;
-            margin-bottom: 5px;
-        }
-
-    .form-control {
-        border: none;
-        border-bottom: 2px solid #D1D1D4;
-        background: none;
-        padding: 10px;
-        padding-left: 24px;
-        font-weight: 700;
-        width: 75%;
-        transition: .2s;
+    .form_control_signup {
+        height: 60px;
+        width: 100%;
+        border: none; /* Removes border */
+        background: transparent; /* Removes background color */
+        color: inherit; /* Inherits text color from parent */
+        box-shadow: none; /* Removes any box shadow */
     }
 
-    .btn {
+    .btn-primary_signup {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         background: #FA5A5A;
-        font-size: 14px;
-        border-radius: 20px;
+        font-size: 18px;
+        border-radius: 10px;
         font-weight: 700;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 50%;
-        height: 40px; /* Adjust height as needed */
+        width: 45%;
+        height: 50px; /* Adjust height as needed */
         color: white;
         border: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        margin-left: 25%;
+        margin-left: 27%;
+        margin-top: 50px;
+        margin-bottom:25px;
+    }
+
+            .form_control_signup:focus {
+                outline: none; /* Removes the default focus outline */
+                border: none; /* Ensures no border is shown */
+                box-shadow: none; /* Removes any box shadow that might appear on focus */
+                background: transparent; /* Keeps the background transparent */
+                color: inherit; /* Inherits text color from the parent */
+                outline: none;
+            }
+
+            .SignUp .form-group_signup input.form_control_signup:valid {
+                outline: none;
+            }
+
+            .SignUp .form-group_signup input.form_control_signup:invalid {
+                outline: none;
+            }
+
+    .selector {
+        width: 80%;
+        height: 90px;
+        margin: 35px 0 0 40px;
+        border: 1.2px solid #ccc;
+        border-radius: 12px;
+        font-size: 12px;
+        flex-direction: column;
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-top: 15px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .button-group {
         margin-top: 30px;
+        display: flex; /* Enables flexbox layout */
+        margin-left:40px;
+        margin-right:40px;
+        justify-content: space-between; /* Distributes space evenly between items */
+        align-items: center; /* Centers items vertically (optional) */
+        padding: 1rem; /* Optional: Add padding around the container */
+
     }
 
-        .btn:hover {
-            background-color: #EF0C0C;
+    .button {
+        color: #333; /* Text color */
+        border: 1.2px solid #ccc;
+        border-radius: 10px; /* Rounded corners */
+        padding: 0.5rem 1rem; /* Padding inside buttons */
+        cursor: pointer; /* Indicate clickable button */
+        font-size: 1rem; /* Font size */
+        width: 40%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+        .button:focus {
+            outline: none;
         }
-
+    /* Primary button style */
     .btn-primary {
-        background: #FA5A5A;
+        border: 1.2px solid red;
+        color: inherit; /* Inherits text color from parent */
+        background-color: white;
     }
-
-        .btn-primary:hover {
-            background-color: #EF0C0C;
+        .btn-primary:focus,
+        .btn-primary:active{
+            border: 1.2px solid red;
+            background-color: white;
+            color: inherit;
         }
-
+    .btn-secondary {
+        border: 1.2px solid #ccc;
+        color: inherit; /* Inherits text color from parent */
+        background-color: white;
+    }
     /* Additional styles specific to the form fields */
-
     .form-group input[type="text"],
     .form-group input[type="email"],
     .form-group input[type="password"] {
@@ -365,6 +427,7 @@ h1:focus {
             height: 100%;
             border: none;
         }
+
 }
 
 @font-face {

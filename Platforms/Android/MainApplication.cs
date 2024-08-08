@@ -3,11 +3,8 @@ using Android.Runtime;
 
 namespace Mockup;
 
-#if DEBUG
-[Application(UsesCleartextTraffic = true)] /*DE STERS!!*/
-#else
+
 [Application] 
-#endif
 public class MainApplication : MauiApplication
 {
     public MainApplication(IntPtr handle, JniHandleOwnership ownership)
