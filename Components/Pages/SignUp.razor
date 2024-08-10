@@ -23,7 +23,6 @@
 <div class="SignUp">
     <EditForm Model="@signUp" OnValidSubmit="@HandleValidSubmit">
         <DataAnnotationsValidator />
-        <ValidationSummary />
         <div class="form-group_signup">
             <InputText id="email" @bind-Value="signUp.Email" class="form_control_signup" placeholder="EMAIL" />
             <ValidationMessage For="() => signUp.Email" />
@@ -33,8 +32,8 @@
             <ValidationMessage For="() => signUp.Password" />
         </div>
         <div class="form-group_signup">
-            <InputText id="confirm_email" @bind-Value="password_confirm" type="password" class="form_control_signup" placeholder="PASSWORD CONFIRMATION" />
-            <ValidationMessage For="() => signUp.Password" />
+            <InputText id="confirm_email" @bind-Value="signUp.ConfirmPassword" type="password" class="form_control_signup" placeholder="PASSWORD CONFIRMATION" />
+            <ValidationMessage For="() => signUp.ConfirmPassword" />
         </div>
         <div class="form-group_signup">
             <InputText id="first_name" @bind-Value="signUp.Surname" class="form_control_signup" placeholder="First Name" />
@@ -47,18 +46,20 @@
         <div class="selector">
             <label for="countrySelect">Country:</label>
             <select id="countrySelect" @bind="signUp.Country" class="form-control">
+                <option value="">--Please choose an option--</option>
                 @foreach (var country in countries)
                 {
                     <option value="@country">@country</option>
                 }
             </select>
+            <ValidationMessage For="() => signUp.Country" />
         </div>
         <div class="button-group">
-            <button @onclick="() => SetRole(student)" class="button btn-student @(signUp.Role == "Student" ? "btn-primary" : "btn-secondary")">
+            <button type="button" @onclick="() => SetRole(student)" class="button btn-student @(signUp.Role == "Student" ? "btn-primary" : "btn-secondary")">
                 Trainee
             </button>
 
-            <button @onclick="() => SetRole(trainer)" class="button btn-trainer @(signUp.Role == "Trainer" ? "btn-primary" : "btn-secondary")">
+            <button type="button"  @onclick="() => SetRole(trainer)" class="button btn-trainer @(signUp.Role == "Trainer" ? "btn-primary" : "btn-secondary")">
                 Trainer
             </button>
         </div>
@@ -67,25 +68,31 @@
     </EditForm>
 </div>
 
+@if (accessType == NetworkAccess.None || accessType== NetworkAccess.Unknown)
+{
+    <p>No internet connection detected. Please check your connection and try again.</p>
+}
 @code {
+
+    NetworkAccess accessType = Connectivity.Current.NetworkAccess;
+
     private SignupModel signUp = new()
     {
-        Role = "Student",
-        Country = "Romania"
+        Role = "Student"
     };
     private bool notFound = false;
     private string password_confirm { get; set; }
     public string student = "Student";
     public string trainer = "Trainer";
 
-    
+
     private List<string> countries = new List<string>
     {
         "Romania",
         "Italy",
         "Spain"
     };
-    
+
     private void SetRole(string role)
     {
         signUp.Role = role;
@@ -93,18 +100,27 @@
 
     private async Task HandleValidSubmit()
     {
-        try
+        UserDto user = new();
+        user = UserDto.equals(signUp);
+        if (accessType == NetworkAccess.None)
         {
-            await UserReqService.PostUserAsync(signUp);
-            Navigation.NavigateTo("confirm_email");
+            StateHasChanged();
         }
-        catch (HttpRequestException httpEx)
+        else
         {
-            Console.WriteLine($"Request error: {httpEx.Message}");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"General error: {ex.Message}");
+            try
+            {
+                await UserReqService.PostUserAsync(user);
+                Navigation.NavigateTo("confirm_email");
+            }
+            catch (HttpRequestException httpEx)
+            {
+                Console.WriteLine($"Request error: {httpEx.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"General error: {ex.Message}");
+            }
         }
     }
 

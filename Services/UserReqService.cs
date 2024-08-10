@@ -38,7 +38,7 @@ public class UserReq
         }
     }
 
-    public async Task PostUserAsync(SignupModel signupModel)
+    public async Task PostUserAsync(UserDto user)
     {
         try
         {
@@ -46,7 +46,36 @@ public class UserReq
             // Define the endpoint URL
             var url = "http://www.boxing4change.eu:8080/user";
             // Send the POST request
-            var response = await _httpClient.PostAsJsonAsync(url, signupModel);
+            var response = await _httpClient.PostAsJsonAsync(url, user);
+
+            // Ensure the request was successful
+            response.EnsureSuccessStatusCode();
+
+            // Read and output the response content (if needed)
+            var responseContent = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"Response content: {responseContent}");
+        }
+        catch (HttpRequestException e)
+        {
+            Console.WriteLine($"Request error: {e.Message}");
+            Console.WriteLine($"Stack Trace: {e.StackTrace}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"General error: {ex.Message}");
+            Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+        }
+    }
+
+    public async Task PutPasswordAsync(LoginModel user)
+    {
+        try
+        {
+
+            // Define the endpoint URL
+            var url = "http://www.boxing4change.eu:8080/update_password";
+            // Send the POST request
+            var response = await _httpClient.PutAsJsonAsync(url, user);
 
             // Ensure the request was successful
             response.EnsureSuccessStatusCode();

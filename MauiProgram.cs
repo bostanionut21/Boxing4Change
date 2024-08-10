@@ -28,8 +28,7 @@ public static class MauiProgram
         builder.Services.AddScoped<UserReq>();
 
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://www.boxing4change.eu:8080/") });
-
-
+       
 
 
 #if DEBUG

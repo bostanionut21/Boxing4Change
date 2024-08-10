@@ -28,30 +28,30 @@
 
         <div class="form-group_login">
             <InputText id="email" @bind-Value="email" class="form_control_login"  placeholder="EMAIL" />
-            <ValidationMessage For="@(() => loginModel.Email)" />
+            <ValidationMessage For="@(() => loginModel.email)" />
         </div>
         <div class="form-group_login">
             <InputText id="password" @bind-Value="password" type="password" class="form_control_login" placeholder="PASSWORD" />
-            <ValidationMessage For="@(() => loginModel.Password)" />
+            <ValidationMessage For="@(() => loginModel.password)" />
         </div>
         <div class="forgot">
-            <p href="">Forgot password?</p>
+            <a href="/forgot_password">Forgot password?</a>
         </div>
         <button class="btn-primary_login" @onclick="LogInReq">Log in</button>
     </EditForm>
 </div>
 @if(notFound==true)
 {
-    <p>Retry!!!</p>
+    <p>The email or password you entered is incorrect. Please try again.</p>
 }
 @if(emailNotVerified)
 {
-    <p>Email is not verified!</p>
+    <p>Your email address has not been verified yet. Please check your inbox for a verification link.</p>
 }
 
-@if (accessType == NetworkAccess.None)
+@if (accessType == NetworkAccess.None || accessType == NetworkAccess.Unknown)
 {
-    <p>Check internet connection!</p>
+    <p>No internet connection detected. Please check your connection and try again.</p>
 }
 @code {
 
@@ -126,6 +126,5 @@
             Console.WriteLine($"General error: {ex.Message}");
         }
     }
-
 
 }

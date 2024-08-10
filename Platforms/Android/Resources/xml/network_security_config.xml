@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
-    <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">www.boxing4change.eu</domain>
-    </domain-config>
+	<domain-config cleartextTrafficPermitted="true">
+		<domain includeSubdomains="true">www.boxing4change.eu</domain>
+		<domain includeSubdomains="true">api.boxing4change.eu</domain>
+	</domain-config>
 </network-security-config>

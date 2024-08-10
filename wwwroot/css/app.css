@@ -190,10 +190,15 @@ h1:focus {
     .forgot {
         font-weight: bold;
         text-decoration: underline;
-        margin-top: 20px;
+        margin-top: 23px;
         margin-left: 60%;
         font-size: 13px;
+        color: black;
     }
+
+        .forgot a {
+            color: black;
+        }
 
     .btn-primary_login {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -302,10 +307,10 @@ h1:focus {
     .button {
         color: #333; /* Text color */
         border: 1.2px solid #ccc;
-        border-radius: 10px; /* Rounded corners */
-        padding: 0.5rem 1rem; /* Padding inside buttons */
+        border-radius: 18px; /* Rounded corners */
+        padding: 0.4rem 1rem; /* Padding inside buttons */
         cursor: pointer; /* Indicate clickable button */
-        font-size: 1rem; /* Font size */
+        font-size: 0.9rem; /* Font size */
         width: 40%;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
@@ -427,7 +432,74 @@ h1:focus {
             height: 100%;
             border: none;
         }
+    
+    /*Email Confirmation*/
+    .confirm-email-container {
+        text-align: center;
+        margin-top: 50px;
+    }
 
+        .confirm-email-container h3 {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .confirm-email-container p {
+            margin: 50px 20px 30px 20px;
+            font-size: 14px;
+            color: black;
+            font-family: robotoslab-regular;
+        }
+
+        .confirm-email-container button {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            background: #FA5A5A;
+            font-size: 18px;
+            border-radius: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45%;
+            height: 50px; /* Adjust height as needed */
+            color: white;
+            border: none;
+            margin-left: 27%;
+            margin-top: 70px;
+        }
+
+            .confirm-email-container button:focus{
+                outline:none;
+            }
+
+        /*Forgot Password*/
+    .back_btn {
+        margin: 50px 0 0 40px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 7px;
+        width: 35px;
+        height: 35px;
+        border-radius: 4px;
+        border: 1px solid rgba(128, 128, 128, 0.35); /* Fixed border property to add a solid border */
+        background-color: white;
+        display: flex; /* Enable Flexbox layout */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        padding: 0; /* Remove default padding */
+        cursor: pointer; /* Pointer cursor on hover */
+        outline: none; /* Remove default focus outline */
+    }
+
+    .forgot-password-container h3 {
+        margin: 50px 0 10px 40px;
+        font: roboto-bold;
+    }
+
+    .forgot-password-container p {
+        margin: 30px 10px 20px 40px;
+        font: robotoslab-regular;
+        font-size: 13px;
+        line-height: 1.4;
+    }
 }
 
 @font-face {

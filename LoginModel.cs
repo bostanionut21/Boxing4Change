@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Models;
 
-internal class LoginModel
+public class LoginModel
 {
-    public string? Email { get; set; }
-    public string? Password { get; set; }
+    public string? email { get; set; }
+    public string? password { get; set; }
 }
