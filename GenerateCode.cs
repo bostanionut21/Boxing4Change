@@ -22,7 +22,7 @@ public class GenerateCode()
 
         if (!string.IsNullOrEmpty(timestampString) && DateTime.TryParse(timestampString, out DateTime storedTime))
         {
-            if ((DateTime.UtcNow - storedTime).TotalSeconds > 60)
+            if ((DateTime.UtcNow - storedTime).TotalSeconds > 120)
             {
                 // Code has expired, remove it from Preferences
                 Preferences.Remove("verification_code");

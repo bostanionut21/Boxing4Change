@@ -56,12 +56,29 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="Resources\Images\FPI_logo.jpg" />
+      <None Remove="Resources\Images\FRBox.jpg" />
+      <None Remove="Resources\Images\gggrain.svg" />
       <None Remove="Resources\Images\lock.jpg" />
       <None Remove="Resources\Images\red_email.png" />
+      <None Remove="Resources\Images\scholas.png" />
+      <None Remove="Resources\Images\spanish.jpg" />
+      <None Remove="Resources\Images\ssf.jpg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Resources\Images\dotnet_bot.svg" />
+      <Content Include="Resources\Images\lock.jpg" />
+      <Content Include="Resources\Images\red_email.png" />
     </ItemGroup>
 
     <ItemGroup>
       <MauiFont Include="wwwroot\Roboto-Bold.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiImage Include="wwwroot\scholas.png" />
+      <MauiImage Include="wwwroot\ssf.jpg" />
     </ItemGroup>
 
     <ItemGroup>

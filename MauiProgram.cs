@@ -20,13 +20,13 @@ public static class MauiProgram
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
             });
-
+        SharedUser sharedUser = new();
         // Set the base address dynamically based on the platform
 
         builder.Services.AddAuthorizationCore();
         builder.Services.AddMauiBlazorWebView();
         builder.Services.AddScoped<UserReq>();
-
+        builder.Services.AddSingleton(sharedUser);
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://www.boxing4change.eu:8080/") });
        
 

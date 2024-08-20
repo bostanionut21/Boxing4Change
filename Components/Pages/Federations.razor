@@ -1,0 +1,52 @@
+﻿@page "/federations"
+@layout StudentLayout
+@inject NavigationManager Navigation
+
+<div class="all">
+<div class="overall">
+    <p class="others" @onclick="() => Navigation.NavigateTo(video_lessons)">Video Lessons</p>
+    <p class="others" @onclick="() => Navigation.NavigateTo(interviews)">Interviews</p>
+    <p class="others" @onclick="() => Navigation.NavigateTo(tutorials)">Tutorials</p>
+    <p class="main_page" @onclick="()=> Navigation.NavigateTo(federations)">Partners</p>
+</div>
+<div class="bottom">
+    <div class="scholas">
+        <a class="aclass" href="https://scholasoccurrentes.org/en/">
+            <img src="./scholas.png" alt="scholasoccurrentes" />
+        </a>
+            <p>Scholas Occurrentes</p>
+    </div>
+        
+    <div class="fpi">
+        <a class="aclass" href="https://www.fpi.it/">
+            <img src="./fpi_logo.png" alt="fpi" />
+        </a>
+        <p>Federazione Pugilistica Italiana</p>
+    </div>
+    <div class="ssf">
+        <a class="aclass" href="https://www.sportsenzafrontiere.it/">
+            <img src="./ssf.jpg" alt="sportsenzafrontiere" />
+        </a>
+        <p>Sport Senza Frontiere</p>
+    </div>
+    <div class="logo">
+        <a class="aclass" href="https://feboxeo.es/">
+            <img src="./spanish.jpg" alt="feboxeo" />
+        </a>
+        <p>Spanish Boxing Federation</p>
+    </div>
+    <div class="frb">
+        <a class="aclass" href="https://frbox.eu/">
+            <img src="./frbox.png" alt="frbox" />
+        </a>
+        <p>Romanian Boxing Federation</p>
+    </div>
+</div>
+</div>
+@code {
+    public int i;
+    public string video_lessons = "video_lessons";
+    public string interviews = "interviews";
+    public string tutorials = "tutorials";
+    public string federations = "federations";
+}

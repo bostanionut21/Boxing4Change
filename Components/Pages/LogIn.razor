@@ -4,6 +4,7 @@
 @using Models
 @using Microsoft.AspNetCore.Authorization
 @inject UserReq UserReqService
+@inject SharedUser sharedUser
 
 <div class="parent_signin">
     <div class="signin_signup">
@@ -53,6 +54,7 @@
 {
     <p>No internet connection detected. Please check your connection and try again.</p>
 }
+
 @code {
 
     NetworkAccess accessType = Connectivity.Current.NetworkAccess;
@@ -88,14 +90,20 @@
             {
                 if(user.isVerified is true)
                 {
+                    sharedUser.Country = user.Country;
+                    sharedUser.Role = user.Role;
+                    sharedUser.Name = user.Name;
+                    sharedUser.Surname = user.Surname;
+                    sharedUser.Email = user.Email;
+
                     if(user.Role == "Student")
                     {
-                        Navigation.NavigateTo("student");
+                        Navigation.NavigateTo("video_lessons");
                     }
                     else
                     if(user.Role == "Trainer")
                     {
-                        Navigation.NavigateTo("trainer");
+                        Navigation.NavigateTo("video_lessons");
                     }
                 }
                 else

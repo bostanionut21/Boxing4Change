@@ -38,6 +38,22 @@ public class UserReq
         }
     }
 
+    public async Task<bool> GetEmailAsync(string email, string code)
+    {
+        try
+        {
+            // Assuming "userId" is passed as a parameter to form a valid endpoint
+            var response = await _httpClient.GetAsync($"email/{email}/{code}");
+            return response.IsSuccessStatusCode;
+        }
+        catch (HttpRequestException e)
+        {
+            // Log error or handle it accordingly
+            Console.WriteLine($"Request error: {e.Message}");
+            return false;
+        }
+    }
+
     public async Task PostUserAsync(UserDto user)
     {
         try

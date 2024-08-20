@@ -14,7 +14,7 @@
         <DataAnnotationsValidator />
         <ValidationSummary />
         <div class="form-group_login">
-            <InputText id="email" @bind-Value="inputCode" class="form_control_login" placeholder="CODE" />
+            <InputText id="email" type="number" @bind-Value="inputCode" class="form_control_login" placeholder="CODE" />
             <ValidationMessage For="@(() => loginModel.email)" />
         </div>
         <button class="btn-primary_login" @onclick="Verify">Verify</button>

@@ -1,0 +1,31 @@
+﻿@page "/video_lessons"
+@layout StudentLayout
+@inject NavigationManager Navigation
+
+<div class="overall">
+    <p class="main_page" @onclick="() => Navigation.NavigateTo(video_lessons)">Video Lessons</p>
+    <p class="others" @onclick="() => Navigation.NavigateTo(interviews)">Interviews</p>
+    <p class="others" @onclick="() => Navigation.NavigateTo(tutorials)">Tutorials</p>
+    <p class="others" @onclick="()=> Navigation.NavigateTo(federations)">Partners</p>
+</div>
+<div class="main_videos">
+    <div class="video-container">
+        @for (i = 0; i < 2; i++)
+        {
+            <div class="video_txt">
+                <p>Join us on a captivating journey through the enchanting village of Eldergrove, where ancient legends come to life. In this video, we explore</p>
+            </div>
+            <video controls>
+                <source src="path/to/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        }
+    </div>
+</div>
+@code{
+    public int i;
+    public string video_lessons = "video_lessons";
+    public string interviews = "interviews";
+    public string tutorials = "tutorials";
+    public string federations = "federations";
+}

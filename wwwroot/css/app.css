@@ -500,6 +500,230 @@ h1:focus {
         font-size: 13px;
         line-height: 1.4;
     }
+
+    /*StudentUI*/
+    .student_ui {
+        display:block;
+    }
+
+        .student_ui h3 {
+            font-family: roboto-bold;
+            color: grey;
+            font-size: 19px;
+            margin: 40px 0 0 30px;
+        }
+
+        .student_ui p {
+            font-family: roboto-bold;
+            color: black;
+            font-size: 20px;
+            margin: 0 0 0 30px;
+            padding-top: 0px;
+            display:inline;
+        }
+
+        .student_ui svg{
+            margin:-8px 0 0 ;
+        }
+
+    /* Container that will scroll horizontally */
+    .overall {
+        margin: 5px 0 0 17px;
+        padding-top: 30px;
+        display: flex; 
+        overflow-x: auto; 
+        overflow-y: hidden; 
+        white-space: nowrap;
+    }
+
+    /* Styling for each item in the scrolling container */
+    .others, .main_page {
+        font-family: 'Roboto Medium' !important;
+        background-color: white;
+        border-radius: 7px !important;
+        border: 1.2px solid black !important;
+        padding: 4px 9px 4px 9px !important;
+        font-size: 14px !important;
+        margin: 0 0 0 10px !important;
+        height: 30px;
+    }
+
+
+    /* Specific styling for the first item */
+    .main_page {
+        background-color: #e5383b;
+        color: white !important;
+        border: 1.2px solid #e5383b !important;
+    }
+    /* Static container that shouldn't scroll */
+    .main_videos {
+        overflow: hidden;
+        width: 100%;
+        padding: 20px;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column; /* Align items in a column */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .video-container {
+        margin: 30px 0; /* Adjust top and bottom margins */
+        width: 100%; /* Make sure each video container takes full width (or adjust as needed) */
+        max-width: 600px; 
+    }
+
+    .video-container video{
+        border-radius: 8px;
+        width: 100%;
+        margin: 4px 0 25px 0;
+    }
+
+    .video_txt {
+        background-color: #FA5A5A;
+        padding: 4px;
+        border-radius: 10px;
+        line-height: 1.15;
+        text-align: center;
+    }
+
+        .video_txt p {
+            font-family: robotoslab-regular;
+            font-size: 11px;
+        }
+    
+     /*federations*/
+    .all { /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=ffffff&c2=b7b7b7&gt=l&gd=dtt
+*/
+        background: #FFFFFF;
+        background: linear-gradient(180deg, #FFFFFF, #B7B7B7);
+    }
+    .bottom {
+        height: 80vh;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+        flex-wrap: wrap; /* Allow items to wrap onto the next line */
+        gap: 0px 50px; /* Space between items */
+        padding: 50px;
+        overflow-x: hidden;
+        margin-top: 0px;
+        border-radius: 6px;
+    }
+
+    .scholas img {
+        width: 85px;
+        height: auto;
+    }
+
+    .fpi img{
+        width: 65px;
+        height: auto;
+        padding-left: 7%;
+        padding-top:15px;
+    }
+
+    .ssf img {
+        width: 65px;
+        height: auto;
+    }
+
+    .logo img {
+        width: 105px;
+        height: auto;
+    }
+
+    .frb img{
+        width: 100px;
+        height: auto;
+        padding-left: 10%;
+        
+    }
+    .scholas {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 120px; /* Container width */
+        height: 140px; /* Container height */
+        overflow: hidden;
+        background-color: white;
+        border-radius: 10%;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .fpi {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 120px; /* Container width */
+        height: 140px; /* Container height */
+        overflow: hidden;
+        background-color: white;
+        border-radius: 10%;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .ssf {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 120px; /* Container width */
+        height: 140px; /* Container height */
+        overflow: hidden;
+        background-color: white;
+        border-radius: 10%;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 120px; /* Container width */
+        height: 140px; /* Container height */
+        overflow: hidden;
+        background-color: white;
+        border-radius: 10%;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .frb {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 120px; /* Container width */
+        height: 140px; /* Container height */
+        overflow: hidden;
+        background-color: white;
+        border-radius: 10%;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+        .scholas p, .fpi p, .ssf p, .logo p, .frb p {
+            margin: 0;
+            font-size: 10px; /* Adjust font size as needed */
+            color: #333; /* Text color */
+            font-family: robotoslab-regular;
+            text-align: center;
+        }
+
+        .frb p, .ssf p, .scholas p{
+            padding-top: 15px;
+        }
+
+        .logo p{
+            margin-bottom:10px;
+        }
+        .fpi p{
+            padding-top: 10px;
+        }
 }
 
 @font-face {
