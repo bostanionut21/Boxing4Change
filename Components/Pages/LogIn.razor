@@ -82,6 +82,7 @@
 
     private async Task LogInReq()
     {
+        //await App.Current.MainPage.Navigation.PushModalAsync(new NewPage1());
         try
         {
             var user = await UserReqService.GetUserAsync(email,password);
@@ -98,12 +99,12 @@
 
                     if(user.Role == "Student")
                     {
-                        Navigation.NavigateTo("video_lessons");
+                        await App.Current.MainPage.Navigation.PushModalAsync(new NewPage1());
                     }
                     else
                     if(user.Role == "Trainer")
                     {
-                        Navigation.NavigateTo("video_lessons");
+                        await App.Current.MainPage.Navigation.PushModalAsync(new NewPage1());
                     }
                 }
                 else

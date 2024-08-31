@@ -4,10 +4,15 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Components;
 using System.Linq;
 using Microsoft.AspNetCore.Components.Authorization;
+using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
+using CommunityToolkit.Maui;
+
+namespace Mockup;
 #if ANDROID
 using Xamarin.Android.Net;
 #endif
-namespace Mockup;
+//namespace Mockup;
 
 public static class MauiProgram
 {
@@ -16,6 +21,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMauiCommunityToolkitMediaElement()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

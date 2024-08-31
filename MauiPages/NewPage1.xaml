@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Mockup.NewPage1"
+             Title="NewPage1">
+
+    <Grid Padding="10">
+        <!-- Define the rows with proportions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- First Row: Auto height -->
+            <RowDefinition Height="Auto" />
+            <!-- Second Row: Auto height -->
+            <RowDefinition Height="*" />
+            <!-- Third Row: Expandable -->
+        </Grid.RowDefinitions>
+
+        <!-- First Row: StackLayout with Two Labels -->
+        <StackLayout Orientation="Vertical"
+                 Grid.Row="0">
+            <Label Text="Welcome,"
+               FontSize="Large"
+               HorizontalOptions="Start"
+               VerticalOptions="Center"
+               BackgroundColor="Black"
+               TextColor="White"
+               Margin="30"/>
+
+            <Label Text="Nume"
+               FontSize="Large"
+               HorizontalOptions="Start"
+               VerticalOptions="Center"
+               BackgroundColor="Red"
+               TextColor="Black"
+               Margin="0"/>
+        </StackLayout>
+
+        <!-- Second Row: Horizontal ScrollView -->
+        <ScrollView Orientation="Horizontal"
+                HorizontalScrollBarVisibility="Never"
+                Grid.Row="1">
+            <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="7,5,0,0"
+                     BackgroundColor="Transparent">
+                <!-- Add Buttons Here -->
+                <Button Text="Video Lessons"
+                        TextColor="white"
+                        FontSize="14"
+                        FontFamily="Roboto Medium"
+                        HorizontalOptions="Center"  
+                        HeightRequest="30"  
+                        CornerRadius="7"  
+                        Padding="9,4,9,4"
+                        BorderColor="#e5383b"
+                        BackgroundColor="#e5383b"
+                        Margin="10,0,0,0"/>
+                <Button Text="Interviews"
+                        TextColor="Black"
+                        FontSize="14"
+                        FontFamily="Roboto Medium"
+                        HorizontalOptions="Center"  
+                        HeightRequest="30"  
+                        CornerRadius="7"  
+                        Padding="9,4,9,4"
+                        BorderColor="black"
+                        BackgroundColor="Transparent"
+                        Margin="10,0,0,0"/>
+                <Button Text="Tutorials"
+                        TextColor="Black"
+                        FontSize="14"
+                        FontFamily="Roboto Medium"
+                        HorizontalOptions="Center"  
+                        HeightRequest="30"  
+                        CornerRadius="7"  
+                        Padding="9,4,9,4"
+                        BorderColor="Black"
+                        BackgroundColor="Transparent"
+                        Margin="10,0,0,0"/>
+                <Button Text="Partners"
+                        TextColor="Black"
+                        FontSize="14"
+                        FontFamily="Roboto Medium"
+                        HorizontalOptions="Center"  
+                        HeightRequest="30"  
+                        CornerRadius="7"  
+                        Padding="9,4,9,4"
+                        BorderColor="black"
+                        BackgroundColor="Transparent"
+                        Margin="10,0,0,0"/>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Third Row: Footer Label -->
+        <ScrollView Grid.Row="2"
+                    Orientation="Vertical"
+                     Margin="20">
+        <StackLayout>
+            <Frame HasShadow="True"
+                    CornerRadius="10"
+                   Padding="0"
+                   Margin="0,20,0,0"
+                   ZIndex="1">
+                <toolkit:MediaElement x:Name="videoMediaElement1"
+                    ShouldAutoPlay="False"
+                    Aspect="AspectFill"
+                    ShouldShowPlaybackControls="True"
+                    Source="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"/>
+            </Frame>
+            <Frame HasShadow="True"
+                    CornerRadius="10"
+                   Padding="0"
+                   Margin="0,20,0,0"
+                   ZIndex="1">
+                <toolkit:MediaElement x:Name="videoMediaElement2"
+                    ShouldAutoPlay="False"
+                    Aspect="AspectFill"
+                    ShouldShowPlaybackControls="True"
+                    Source="https://www.boxing4change.eu:8081/streaming?filePath=/var/videos/output_compatible_hevc.mp4"/>               
+            </Frame>
+            <Frame HasShadow="True"
+                    CornerRadius="10"
+                   Padding="0"
+                   Margin="0,20,0,0"
+                   ZIndex="1">
+                <toolkit:MediaElement x:Name="videoMediaElement3"
+                    ShouldAutoPlay="False"
+                    Aspect="AspectFill"
+                    ShouldShowPlaybackControls="True"
+                    Source="https://www.boxing4change.eu:8081/streaming?filePath=/var/videos/output_compatible_hevc.mp4"
+                    MetadataTitle="Boxing"
+                    MetadataArtworkUrl="D:\C#_Codes\Mockup\wwwroot\splash_video.jpg"/>
+            </Frame>
+            <Frame HasShadow="True"
+                    CornerRadius="10"
+                   Padding="0"
+                   Margin="0,20,0,0"
+                   ZIndex="1">
+                <toolkit:MediaElement x:Name="videoMediaElement4"
+                    ShouldAutoPlay="False"
+                    Aspect="AspectFill"
+                    ShouldShowPlaybackControls="True"
+                    Source="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"/>
+            </Frame>
+        </StackLayout>
+        </ScrollView>
+    </Grid>
+
+
+</ContentPage>
