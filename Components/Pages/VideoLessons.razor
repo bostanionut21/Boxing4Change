@@ -1,12 +1,13 @@
 ﻿@page "/video_lessons"
 @layout StudentLayout
-@inject NavigationManager Navigation
+@inject NavigatorService NavigatorService
+@inject NavigationManager NavigationManagement
 
 <div class="overall">
-    <p class="main_page" @onclick="() => Navigation.NavigateTo(video_lessons)">Video Lessons</p>
-    <p class="others" @onclick="() => Navigation.NavigateTo(interviews)">Interviews</p>
-    <p class="others" @onclick="() => Navigation.NavigateTo(tutorials)">Tutorials</p>
-    <p class="others" @onclick="()=> Navigation.NavigateTo(federations)">Partners</p>
+    <p class="main_page" @onclick="() => NavigationManagement.NavigateTo(video_lessons)">Video Lessons</p>
+    <p class="others" @onclick="() => NavigationManagement.NavigateTo(interviews)">Interviews</p>
+    <p class="others" @onclick="() => NavigationManagement.NavigateTo(tutorials)">Tutorials</p>
+    <p class="others" @onclick="()=> NavigationManagement.NavigateTo(federations)">Partners</p>
 </div>
 <div class="main_videos">
     <div class="video-container">
@@ -28,4 +29,11 @@
     public string interviews = "interviews";
     public string tutorials = "tutorials";
     public string federations = "federations";
+    protected override void OnInitialized()
+    {
+
+        NavigatorService.NavigationManager = NavigationManagement;
+
+        base.OnInitialized();
+    }
 }

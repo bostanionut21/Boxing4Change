@@ -1,10 +1,11 @@
 ﻿@page "/"
 @using Microsoft.AspNetCore.Components.Forms
-@inject NavigationManager Navigation
 @using Models
 @using Microsoft.AspNetCore.Authorization
 @inject UserReq UserReqService
 @inject SharedUser sharedUser
+@inject NavigatorService NavigatorService
+@inject NavigationManager NavigationManagement
 
 <div class="parent_signin">
     <div class="signin_signup">
@@ -64,11 +65,18 @@
     private string password { get; set; }
     private bool emailNotVerified { get; set; } = false; 
 
+    protected override void OnInitialized()
+    {
+
+        NavigatorService.NavigationManager = NavigationManagement;
+
+        base.OnInitialized();
+    }
     private void NavigateToSignUp()
     {
         try
         {
-            Navigation.NavigateTo("signup");
+            NavigationManagement.NavigateTo("signup");
         }
         catch (Exception ex)
         {
@@ -99,12 +107,12 @@
 
                     if(user.Role == "Student")
                     {
-                        await App.Current.MainPage.Navigation.PushModalAsync(new NewPage1());
+                        await App.Current.MainPage.Navigation.PushModalAsync(new NewPage1(NavigatorService, sharedUser));
                     }
                     else
                     if(user.Role == "Trainer")
                     {
-                        await App.Current.MainPage.Navigation.PushModalAsync(new NewPage1());
+                        await App.Current.MainPage.Navigation.PushModalAsync(new NewPage1(NavigatorService, sharedUser));
                     }
                 }
                 else

@@ -19,21 +19,26 @@
         <!-- First Row: StackLayout with Two Labels -->
         <StackLayout Orientation="Vertical"
                  Grid.Row="0">
-            <Label Text="Welcome,"
-               FontSize="Large"
+            <Label Text="{Binding Welcome}"
+               FontSize="19"
                HorizontalOptions="Start"
                VerticalOptions="Center"
-               BackgroundColor="Black"
-               TextColor="White"
-               Margin="30"/>
+               BackgroundColor="Transparent"
+               TextColor="grey"
+               Margin="30,40,0,0"
+               FontFamily="RobotoBold"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Name}"
+                FontSize="20"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                BackgroundColor="Transparent"
+                TextColor="black"
+                Margin="30,0,0,0"
+                FontFamily="RobotoBold"/>
+                <Image Source="img.png" />
 
-            <Label Text="Nume"
-               FontSize="Large"
-               HorizontalOptions="Start"
-               VerticalOptions="Center"
-               BackgroundColor="Red"
-               TextColor="Black"
-               Margin="0"/>
+            </StackLayout>
         </StackLayout>
 
         <!-- Second Row: Horizontal ScrollView -->
@@ -43,10 +48,10 @@
             <StackLayout Orientation="Horizontal"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"
-                     Margin="7,5,0,0"
+                     Margin="7,20,0,0"
                      BackgroundColor="Transparent">
                 <!-- Add Buttons Here -->
-                <Button Text="Video Lessons"
+                <Button Text="{Binding VideoLessons}"
                         TextColor="white"
                         FontSize="14"
                         FontFamily="Roboto Medium"
@@ -57,7 +62,7 @@
                         BorderColor="#e5383b"
                         BackgroundColor="#e5383b"
                         Margin="10,0,0,0"/>
-                <Button Text="Interviews"
+                <Button Text="{Binding Interviews}"
                         TextColor="Black"
                         FontSize="14"
                         FontFamily="Roboto Medium"
@@ -67,8 +72,9 @@
                         Padding="9,4,9,4"
                         BorderColor="black"
                         BackgroundColor="Transparent"
-                        Margin="10,0,0,0"/>
-                <Button Text="Tutorials"
+                        Margin="10,0,0,0"
+                        />
+                <Button Text="{Binding Tutorials}"
                         TextColor="Black"
                         FontSize="14"
                         FontFamily="Roboto Medium"
@@ -79,7 +85,7 @@
                         BorderColor="Black"
                         BackgroundColor="Transparent"
                         Margin="10,0,0,0"/>
-                <Button Text="Partners"
+                <Button Text="{Binding Partners}"
                         TextColor="Black"
                         FontSize="14"
                         FontFamily="Roboto Medium"
@@ -89,50 +95,55 @@
                         Padding="9,4,9,4"
                         BorderColor="black"
                         BackgroundColor="Transparent"
-                        Margin="10,0,0,0"/>
+                        Margin="10,0,0,0"
+                        Clicked="MenuItem_Clicked"/>
             </StackLayout>
         </ScrollView>
 
         <!-- Third Row: Footer Label -->
         <ScrollView Grid.Row="2"
                     Orientation="Vertical"
+                    VerticalScrollBarVisibility="Never"
                      Margin="20">
-        <StackLayout>
+            <StackLayout>
+
+                <Frame HasShadow="True"
+                   CornerRadius="10"
+                   Padding="0"
+                   Margin="0,20,0,0">
+                    <toolkit:MediaElement x:Name="videoMediaElement1"
+                     ShouldAutoPlay="False"
+                     Aspect="AspectFit"
+                     HeightRequest="200"
+                     HorizontalOptions="FillAndExpand"
+                     ShouldShowPlaybackControls="True"
+                    Source="https://www.boxing4change.eu:8081/streaming?filePath=/var/videos/Romania/video1_output.mp4"/>
+                </Frame>
+                <Frame HasShadow="True"
+                   CornerRadius="10"
+                   Padding="0"
+                   Margin="0,20,0,0">
+                    <toolkit:MediaElement x:Name="videoMediaElement2"
+                    ShouldAutoPlay="False"
+                    Aspect="AspectFit"
+                     HeightRequest="200"
+                    HorizontalOptions="FillAndExpand"
+                    ShouldShowPlaybackControls="True"
+                    Source="https://www.boxing4change.eu:8081/streaming?filePath=/var/videos/Romania/video2_output.mp4"   />
+                </Frame>
             <Frame HasShadow="True"
                     CornerRadius="10"
                    Padding="0"
                    Margin="0,20,0,0"
                    ZIndex="1">
-                <toolkit:MediaElement x:Name="videoMediaElement1"
-                    ShouldAutoPlay="False"
-                    Aspect="AspectFill"
-                    ShouldShowPlaybackControls="True"
-                    Source="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"/>
-            </Frame>
-            <Frame HasShadow="True"
-                    CornerRadius="10"
-                   Padding="0"
-                   Margin="0,20,0,0"
-                   ZIndex="1">
-                <toolkit:MediaElement x:Name="videoMediaElement2"
-                    ShouldAutoPlay="False"
-                    Aspect="AspectFill"
-                    ShouldShowPlaybackControls="True"
-                    Source="https://www.boxing4change.eu:8081/streaming?filePath=/var/videos/output_compatible_hevc.mp4"/>               
-            </Frame>
-            <Frame HasShadow="True"
-                    CornerRadius="10"
-                   Padding="0"
-                   Margin="0,20,0,0"
-                   ZIndex="1">
-                <toolkit:MediaElement x:Name="videoMediaElement3"
-                    ShouldAutoPlay="False"
-                    Aspect="AspectFill"
-                    ShouldShowPlaybackControls="True"
-                    Source="https://www.boxing4change.eu:8081/streaming?filePath=/var/videos/output_compatible_hevc.mp4"
-                    MetadataTitle="Boxing"
-                    MetadataArtworkUrl="D:\C#_Codes\Mockup\wwwroot\splash_video.jpg"/>
-            </Frame>
+                    <toolkit:MediaElement x:Name="videoMediaElement3"
+                     ShouldAutoPlay="False"
+                     Aspect="AspectFit"
+                     HeightRequest="200"
+                     HorizontalOptions="FillAndExpand"
+                     ShouldShowPlaybackControls="True"
+                    Source="https://www.boxing4change.eu:8081/streaming?filePath=/var/videos/Romania/video3_output.mp4"/>
+                </Frame>
             <Frame HasShadow="True"
                     CornerRadius="10"
                    Padding="0"
@@ -140,9 +151,11 @@
                    ZIndex="1">
                 <toolkit:MediaElement x:Name="videoMediaElement4"
                     ShouldAutoPlay="False"
-                    Aspect="AspectFill"
+                    Aspect="AspectFit"
+                    HeightRequest="200"
+                    HorizontalOptions="FillAndExpand"
                     ShouldShowPlaybackControls="True"
-                    Source="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"/>
+                    Source="https://www.boxing4change.eu:8081/streaming?filePath=/var/videos/Romania/video4_output.mp4"/>
             </Frame>
         </StackLayout>
         </ScrollView>

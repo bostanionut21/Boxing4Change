@@ -22,14 +22,14 @@
         <Nullable>enable</Nullable>
 
         <!-- Display name -->
-        <ApplicationTitle>Mockup</ApplicationTitle>
+        <ApplicationTitle>Boxing4Change</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.mockup</ApplicationId>
+        <ApplicationId> com.companyname.mockup</ApplicationId>
 
         <!-- Versions -->
-        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-        <ApplicationVersion>1</ApplicationVersion>
+        <ApplicationDisplayVersion>4.0</ApplicationDisplayVersion>
+        <ApplicationVersion>4</ApplicationVersion>
 
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
@@ -56,9 +56,15 @@
     </ItemGroup>
 
     <ItemGroup>
+      <MauiImage Remove="Resources\Images\gggrain.svg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\Fonts\Roboto-Bold.ttf" />
       <None Remove="Resources\Images\FPI_logo.jpg" />
       <None Remove="Resources\Images\FRBox.jpg" />
       <None Remove="Resources\Images\gggrain.svg" />
+      <None Remove="Resources\Images\img.png" />
       <None Remove="Resources\Images\lock.jpg" />
       <None Remove="Resources\Images\red_email.png" />
       <None Remove="Resources\Images\scholas.png" />
@@ -68,6 +74,10 @@
 
     <ItemGroup>
       <Content Include="Resources\Images\dotnet_bot.svg" />
+      <Content Include="Resources\Images\gggrain.svg">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
       <Content Include="Resources\Images\lock.jpg" />
       <Content Include="Resources\Images\red_email.png" />
     </ItemGroup>

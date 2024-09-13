@@ -1,12 +1,14 @@
 ﻿@page "/federations"
 @layout StudentLayout
 @inject NavigationManager Navigation
+@inject NavigatorService NavigatorService
+@inject SharedUser sharedUser
 
 <div class="all">
 <div class="overall">
-    <p class="others" @onclick="() => Navigation.NavigateTo(video_lessons)">Video Lessons</p>
-    <p class="others" @onclick="() => Navigation.NavigateTo(interviews)">Interviews</p>
-    <p class="others" @onclick="() => Navigation.NavigateTo(tutorials)">Tutorials</p>
+        <p class="others" @onclick="() => App.Current.MainPage.Navigation.PushModalAsync(new NewPage1(NavigatorService,sharedUser))">Video Lessons</p>
+        <p class="others" @onclick="() => App.Current.MainPage.Navigation.PushModalAsync(new NewPage1(NavigatorService,sharedUser))">Interviews</p>
+        <p class="others" @onclick="() => App.Current.MainPage.Navigation.PushModalAsync(new NewPage1(NavigatorService,sharedUser))">Tutorials</p>
     <p class="main_page" @onclick="()=> Navigation.NavigateTo(federations)">Partners</p>
 </div>
 <div class="bottom">

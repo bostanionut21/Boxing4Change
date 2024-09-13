@@ -1,4 +1,7 @@
-﻿namespace Mockup
+﻿using Blazorise;
+using Microsoft.Maui.ApplicationModel.Communication;
+
+namespace Mockup
 {
     public partial class App : Application
     {
@@ -9,4 +12,5 @@
             MainPage = new MainPage();
         }
     }
+    
 }
