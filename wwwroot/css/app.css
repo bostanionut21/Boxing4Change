@@ -93,7 +93,7 @@ h1:focus {
 
     .signin_signup {
         display: inline-flex;
-        background-color: #FA5A5A;
+        background-color: #539adb;
         align-items: center;
         margin-top: 10%;
         width: 85%;
@@ -110,7 +110,7 @@ h1:focus {
         font-family: roboto-bold;
         font-size: 20px;
         color: #FAFAFA;
-        background-color: #EF0C0C;
+        background-color: #1D6CB5;
         width: 55%;
         height: 100%;
         border-radius: 13px;
@@ -146,7 +146,7 @@ h1:focus {
     /*Form*/
 
     .LogIn {
-        margin: 70px 0 0 0;
+        margin: 45px 0 0 0;
     }
 
     .form-group_login {
@@ -202,7 +202,7 @@ h1:focus {
 
     .btn-primary_login {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        background: #FA5A5A;
+        background: #1D6CB5;
         font-size: 18px;
         border-radius: 10px;
         font-weight: 700;
@@ -217,7 +217,10 @@ h1:focus {
         margin-top: 50px;
     }
 
-
+    Logo_img.img{
+        margin-left:20%;
+        margin-top:20px;
+    }
     /*signup*/
     .SignUp {
         margin: 25px 10px 0 10px;
@@ -246,7 +249,7 @@ h1:focus {
 
     .btn-primary_signup {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        background: #FA5A5A;
+        background: #1D6CB5;
         font-size: 18px;
         border-radius: 10px;
         font-weight: 700;
@@ -259,7 +262,7 @@ h1:focus {
         border: none;
         margin-left: 27%;
         margin-top: 50px;
-        margin-bottom:25px;
+        margin-bottom: 25px;
     }
 
             .form_control_signup:focus {
@@ -362,7 +365,7 @@ h1:focus {
 
     .signin_signup2 {
         display: inline-flex;
-        background-color: #FA5A5A;
+        background-color: #4a88c2;
         align-items: center;
         margin-top: 10%;
         width: 85%;
@@ -391,7 +394,7 @@ h1:focus {
         font-family: roboto-bold;
         font-size: 20px;
         color: #FAFAFA;
-        background-color: #EF0C0C;
+        background-color: #1D6CB5;
         width: 55%;
         height: 100%;
         border-radius: 13px;
@@ -453,7 +456,7 @@ h1:focus {
 
         .confirm-email-container button {
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            background: #FA5A5A;
+            background: #1D6CB5;
             font-size: 18px;
             border-radius: 10px;
             font-weight: 700;
@@ -551,9 +554,9 @@ h1:focus {
 
     /* Specific styling for the first item */
     .main_page {
-        background-color: #e5383b;
+        background-color: #1D6CB5;
         color: white !important;
-        border: 1.2px solid #e5383b !important;
+        border: 1.2px solid #1D6CB5 !important;
     }
     /* Static container that shouldn't scroll */
     .main_videos {
@@ -600,17 +603,16 @@ h1:focus {
         background: linear-gradient(180deg, #FFFFFF, #B7B7B7);
     }
     .bottom {
-        height: 80vh;
+        height: auto; /* Set to auto to accommodate content height */
         width: 100%;
         display: flex;
-        justify-content: center; /* Center items horizontally */
-        align-items: center; /* Center items vertically */
-        flex-wrap: wrap; /* Allow items to wrap onto the next line */
-        gap: 0px 50px; /* Space between items */
-        padding: 50px;
+        flex-direction: column; /* Change direction to column */
+        align-items: center; /* Center items horizontally */
+        gap: 20px; /* Space between items */
+        padding: 20px;
         overflow-x: hidden;
-        margin-top: 0px;
-        border-radius: 6px;
+        margin-top: 15px;
+        border-radius: 0px;
     }
 
     .scholas img {
@@ -618,65 +620,69 @@ h1:focus {
         height: auto;
     }
 
-    .fpi img{
+    .fpi img {
         width: 65px;
         height: auto;
         padding-left: 7%;
-        padding-top:15px;
+        padding-top: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .ssf img {
         width: 65px;
         height: auto;
+        margin-right: 50px;
     }
 
     .logo img {
-        width: 105px;
+        width: 125px;
         height: auto;
+        margin-right: 10px;
     }
 
-    .frb img{
-        width: 100px;
+    .frb img {
+        width: 120px;
         height: auto;
         padding-left: 10%;
-        
+        margin-right: 10px;
     }
     .scholas {
         display: flex;
         justify-content: center;
-        flex-direction: column;
         align-items: center;
-        width: 120px; /* Container width */
-        height: 140px; /* Container height */
+        width: 100%; /* Container width */
+        height: auto; /* Container height */
         overflow: hidden;
+        padding-bottom:10px;
         background-color: white;
-        border-radius: 10%;
+        border-radius: 2%;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
     .fpi {
         display: flex;
         justify-content: center;
-        flex-direction: column;
         align-items: center;
-        width: 120px; /* Container width */
-        height: 140px; /* Container height */
+        width: 100%; /* Container width */
+        height: auto; /* Container height */
         overflow: hidden;
+        padding-bottom: 10px;
         background-color: white;
-        border-radius: 10%;
+        border-radius: 2%;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
     .ssf {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 120px; /* Container width */
-        height: 140px; /* Container height */
+        width: 100%; /* Container width */
+        height:110px; /* Container height */
         overflow: hidden;
+        padding-bottom: 10px;
         background-color: white;
-        border-radius: 10%;
+        border-radius: 2%;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
@@ -684,25 +690,25 @@ h1:focus {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        width: 120px; /* Container width */
-        height: 140px; /* Container height */
+        width: 100%; /* Container width */
+        height: 110px; /* Container height */
         overflow: hidden;
+        padding-bottom: 10px;
         background-color: white;
-        border-radius: 10%;
+        border-radius: 2%;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
     .frb {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 120px; /* Container width */
-        height: 140px; /* Container height */
+        width: 100%; /* Container width */
+        height: 110px; /* Container height */
         overflow: hidden;
+        padding-bottom: 10px;
         background-color: white;
-        border-radius: 10%;
+        border-radius: 2%;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
@@ -724,6 +730,139 @@ h1:focus {
         .fpi p{
             padding-top: 10px;
         }
+        /*Strategies&Objectives*/
+    .b4c-container {
+        font-family: robotoslab-regular;
+        line-height: 1.4;
+        color: #333;
+        max-width: 900px;
+        margin: 10px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .b4c-container h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .b4c-container p {
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .b4c-container ul {
+            list-style-type: disc;
+            padding-left: 17px;
+        }
+
+            .b4c-container ul li {
+                margin-bottom: 10px;
+                font-size: 12px;
+            }
+
+                .b4c-container ul li::marker {
+                    color: #2980b9;
+                }
+
+    .b4c-container-wkplan {
+        font-family: robotoslab-regular;
+        color: #333;
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f7f7f7;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .b4c-container-wkplan .wp {
+            margin-bottom: 30px;
+            margin-top:15px;
+            padding: 15px;
+            border-left: 5px solid #2980b9;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .b4c-container-wkplan h4 {
+            color: #2980b9;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .b4c-container-wkplan p {
+            margin-bottom: 15px;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .b4c-container-wkplan ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+            .b4c-container-wkplan ul li {
+                margin-bottom: 10px;
+            }
+
+         /*Contact*/
+    .contact-container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .contact-info {
+        margin-bottom: 20px;
+    }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #5cb85c;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
 }
 
 @font-face {
@@ -737,4 +876,9 @@ h1:focus {
 @font-face {
     font-family: 'robotoslab-regular';
     src: url('../RobotoSlab-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'cocogoose';
+    src: url('../Cocogoose_trial.otf') format('truetype');
 }

@@ -5,50 +5,139 @@
 @inject SharedUser sharedUser
 
 <div class="all">
-<div class="overall">
-        <p class="others" @onclick="() => App.Current.MainPage.Navigation.PushModalAsync(new NewPage1(NavigatorService,sharedUser))">Video Lessons</p>
-        <p class="others" @onclick="() => App.Current.MainPage.Navigation.PushModalAsync(new NewPage1(NavigatorService,sharedUser))">Interviews</p>
-        <p class="others" @onclick="() => App.Current.MainPage.Navigation.PushModalAsync(new NewPage1(NavigatorService,sharedUser))">Tutorials</p>
-    <p class="main_page" @onclick="()=> Navigation.NavigateTo(federations)">Partners</p>
-</div>
-<div class="bottom">
-    <div class="scholas">
-        <a class="aclass" href="https://scholasoccurrentes.org/en/">
-            <img src="./scholas.png" alt="scholasoccurrentes" />
-        </a>
-            <p>Scholas Occurrentes</p>
+    <div class="overall">
+        <p class="main_page" @onclick="()=> Navigation.NavigateTo(partnersPage)">@partners</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(strategiesObjectivesPage)">@strategiesObjectives</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(workPlanPage)">@workPlan</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(galleryPage)">@gallery</p>
+        <p class="others" onclick="window.location.href='https://www.fpiservizi.it/elearning/login.php'">@elearning</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(contactPage)">@contact</p>
     </div>
-        
-    <div class="fpi">
-        <a class="aclass" href="https://www.fpi.it/">
-            <img src="./fpi_logo.png" alt="fpi" />
-        </a>
-        <p>Federazione Pugilistica Italiana</p>
+    <div class="bottom">
+        <div class="scholas">
+            <a class="aclass" href="https://scholasoccurrentes.org/en/">
+                <img src="./scholas.png" alt="scholasoccurrentes" />
+            </a>
+            @if(sharedUser.Country == "Romania")
+            {
+                <p><strong>Scholas Occurrentes</strong> este o organizație internațională de drept pontifical, finanțată de Papa Francisc. Prezentă cu rețeaua sa în 190 de țări, integrează mai mult de 400.000 de centre educaționale și ajunge la mai mult de un milion de copii și tineri din întreaga lume. Misiunea sa este de a răspunde chemării de a crea o cultură a întâlnirii, aducând tinerii împreună într-o educație care generează sens.</p>
+            }
+            else if(sharedUser.Country == "Italy")
+            {
+                <p>
+                    <strong>Scholas</strong>è un'organizzazione internazionale di diritto pontificio, finanziata da Francesco Papa. Presente con la sua rete in 190 Paesi, integra più di 400.000 centri educativi e raggiunge più di un milione di bambini e giovani in tutto il mondo. La sua missione è rispondere alla chiamata a creare una cultura dell'incontro, unendo i giovani in un'educazione che genera significato.
+                </p>
+            }
+            else if(sharedUser.Country == "Spain")
+            {
+                <p>
+                    <strong>Scholas</strong>es una organización internacional de Derecho Pontificio, financiada por el Papa Francisco. Presente con su red en 190 países, integrando más de 400.000 centros educativos y llegando a más de un millón de niños y jóvenes de todo el mundo. Su misión es responder a la llamada a crear una cultura del encuentro, reuniendo a los jóvenes en una educación generadora de sentido.
+                </p>
+            }
+            else
+            {
+                
+            }
+            </div>
+
+        <div class="fpi">
+            <a class="aclass" href="https://www.fpi.it/">
+                <img src="./fpi_logo.png" alt="fpi" />
+            </a>
+            @if (sharedUser.Country == "Romania")
+            {
+                <p><strong> Federația Italiană de Box (FPI) </strong>
+                    , fondată în 1916, este o asociație non-profit cu personalitate juridică. Este recunoscută, în scopuri sportive, de Consiliul Național al C.O.N.I. și este formată din asociațiile și societățile care practică boxul, a căror cerere a fost acceptată de Consiliul Federal. FPI are ca scop promovarea, organizarea, disciplinarea, reglementarea, propagandă, dezvoltarea și implementarea programelor de pregătire pentru sportivi și tehnicieni
+                </p>
+            }
+            else if (sharedUser.Country == "Italy")
+            {
+                <p>
+                    <strong>La Federación Italiana de Boxeo (FPI)</strong>, fundada en 1916, es una asociación sin ánimo de lucro dotada de personalidad jurídica. Está reconocida, a efectos deportivos, por el Consejo Nacional del C.O.N.I. y está formada por las Asociaciones y Sociedades que practican el boxeo, cuya solicitud ha sido aceptada por el Consejo Federal. La FPI tiene por objeto promover, organizar, disciplinar, reglamentar, propagandizar, desarrollar y ejecutar programas de formación de deportistas y técnicos
+                </p>
+            }
+            else if (sharedUser.Country == "Spain")
+            {
+                <p>
+                    <strong>La Federación Italiana de Boxeo (FPI)</strong>, fundada en 1916, es una asociación sin ánimo de lucro dotada de personalidad jurídica. Está reconocida, a efectos deportivos, por el Consejo Nacional del C.O.N.I. y está formada por las Asociaciones y Sociedades que practican el boxeo, cuya solicitud ha sido aceptada por el Consejo Federal. La FPI tiene por objeto promover, organizar, disciplinar, reglamentar, propagandizar, desarrollar y ejecutar programas de formación de deportistas y técnicos
+                </p>
+            }
+            else
+            {
+
+            }
+        </div>
+        <div class="ssf">
+            <a class="aclass" href="https://www.sportsenzafrontiere.it/">
+                <img src="./ssf.jpg" alt="sportsenzafrontiere" />
+            </a>
+            <p>Sport Senza Frontiere</p>
+        </div>
+        <div class="logo">
+            <a class="aclass" href="https://feboxeo.es/">
+                <img src="./spanish.jpg" alt="feboxeo" />
+            </a>
+            <p>Spanish Boxing Federation</p>
+        </div>
+        <div class="frb">
+            <a class="aclass" href="https://frbox.eu/">
+                <img src="./frbox.png" alt="frbox" />
+            </a>
+            <p>Romanian Boxing Federation</p>
+        </div>
     </div>
-    <div class="ssf">
-        <a class="aclass" href="https://www.sportsenzafrontiere.it/">
-            <img src="./ssf.jpg" alt="sportsenzafrontiere" />
-        </a>
-        <p>Sport Senza Frontiere</p>
-    </div>
-    <div class="logo">
-        <a class="aclass" href="https://feboxeo.es/">
-            <img src="./spanish.jpg" alt="feboxeo" />
-        </a>
-        <p>Spanish Boxing Federation</p>
-    </div>
-    <div class="frb">
-        <a class="aclass" href="https://frbox.eu/">
-            <img src="./frbox.png" alt="frbox" />
-        </a>
-        <p>Romanian Boxing Federation</p>
-    </div>
-</div>
 </div>
 @code {
     public int i;
-    public string video_lessons = "video_lessons";
-    public string interviews = "interviews";
-    public string tutorials = "tutorials";
-    public string federations = "federations";
+    public string strategiesObjectives;
+    public string partners;
+    public string workPlan;
+    public string gallery;
+    public string elearning;
+    public string contact;
+    public string partnersPage = "federations";
+    public string strategiesObjectivesPage = "strategiesobjectives";
+    public string workPlanPage = "workplan";
+    public string galleryPage = "gallery";
+    public string elearningPage = "elearning";
+    public string contactPage = "contact";
+    protected override void OnInitialized()
+    {
+        if (sharedUser.Country == "Romania")
+        {
+            strategiesObjectives = "Strategii&Obiective";
+            partners = "Parteneri";
+            workPlan = "Plan de lucru";
+            gallery = "Galerie";
+            elearning = "E-Learning";
+            contact = "Contact";
+        }
+        else if (sharedUser.Country == "Italy")
+        {
+            strategiesObjectives = "Strategie&Obiettivi";
+            partners = "Parteneri";
+            workPlan = "Piano di lavoro";
+            gallery = "Galleria";
+            elearning = "E-Learning";
+            contact = "Contatto";
+        }
+        else if (sharedUser.Country == "Spain")
+        {
+            strategiesObjectives = "Estrategias&Objetivos";
+            partners = "Socios";
+            workPlan = "Plan de trabajo";
+            gallery = "Galería";
+            elearning = "E-Learning";
+            contact = "Contacto";
+        }
+        else
+        {
+            strategiesObjectives = "Strategies&Objectives";
+            partners = "Partners";
+            workPlan = "Work plan";
+            gallery = "Gallery";
+            elearning = "E-Learning";
+            contact = "Contact";
+        }
+    }
 }

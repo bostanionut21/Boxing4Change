@@ -51,7 +51,18 @@
                      Margin="7,20,0,0"
                      BackgroundColor="Transparent">
                 <!-- Add Buttons Here -->
-                <Button Text="{Binding VideoLessons}"
+                <Button Text="{Binding Partners}"
+                        TextColor="White"
+                        FontSize="14"
+                        FontFamily="Roboto Medium"
+                        HorizontalOptions="Center"  
+                        HeightRequest="30"  
+                        CornerRadius="7"  
+                        Padding="9,4,9,4"
+                        BorderColor="#1D6CB5"
+                        BackgroundColor="#1D6CB5"
+                        Margin="10,0,0,0"/>
+                <Button Text="{Binding StrategiesObjectives}"
                         TextColor="white"
                         FontSize="14"
                         FontFamily="Roboto Medium"
@@ -59,10 +70,11 @@
                         HeightRequest="30"  
                         CornerRadius="7"  
                         Padding="9,4,9,4"
-                        BorderColor="#e5383b"
-                        BackgroundColor="#e5383b"
-                        Margin="10,0,0,0"/>
-                <Button Text="{Binding Interviews}"
+                        BorderColor="black"
+                        BackgroundColor="Transparent"
+                        Margin="10,0,0,0"
+                        />
+                <Button Text="{Binding WorkPlan}"
                         TextColor="Black"
                         FontSize="14"
                         FontFamily="Roboto Medium"
@@ -74,7 +86,7 @@
                         BackgroundColor="Transparent"
                         Margin="10,0,0,0"
                         />
-                <Button Text="{Binding Tutorials}"
+                <Button Text="{Binding Gallery}"
                         TextColor="Black"
                         FontSize="14"
                         FontFamily="Roboto Medium"
@@ -85,18 +97,6 @@
                         BorderColor="Black"
                         BackgroundColor="Transparent"
                         Margin="10,0,0,0"/>
-                <Button Text="{Binding Partners}"
-                        TextColor="Black"
-                        FontSize="14"
-                        FontFamily="Roboto Medium"
-                        HorizontalOptions="Center"  
-                        HeightRequest="30"  
-                        CornerRadius="7"  
-                        Padding="9,4,9,4"
-                        BorderColor="black"
-                        BackgroundColor="Transparent"
-                        Margin="10,0,0,0"
-                        Clicked="MenuItem_Clicked"/>
             </StackLayout>
         </ScrollView>
 

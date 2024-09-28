@@ -1,0 +1,360 @@
+﻿@page "/workplan"
+@layout StudentLayout
+@inject NavigationManager Navigation
+@inject NavigatorService NavigatorService
+@inject SharedUser sharedUser
+
+<div class="all">
+    <div class="overall">
+        <p class="others" @onclick="()=> Navigation.NavigateTo(partnersPage)">@partners</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(strategiesObjectivesPage)">@strategiesObjectives</p>
+        <p class="main_page" @onclick="()=> Navigation.NavigateTo(workPlanPage)">@workPlan</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(galleryPage)">@gallery</p>
+        <p class="others" onclick="window.location.href='https://www.fpiservizi.it/elearning/login.php'">@elearning</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(contactPage)">@contact</p>
+    </div>
+
+    @if (sharedUser.Country == "Romania")
+    {
+        <div class="b4c-container-wkplan">
+            <p>B4C constă în 7 macro-activități (WP): WP1 - Management și coordonare; WP2 - Pregătire; WP3 - Curs de formare pentru 80 de antrenori de box și 40 de profesori; WP4 - Curs de formare pentru adolescenți articulat mai întâi pe partea practică și apoi pe cea teoretică (abordarea "learning by doing"); WP5 - Ateliere de inspirație și întâlniri cu campionii de box; WP6 - Tabăra de vară Joy, ca punct culminant al experienței; WP7 - Activități de comunicare, impact și diseminare.</p>
+
+            <div class="wp">
+                <h4>WP1 - Management și coordonare</h4>
+                <p><strong>Condusă de FPI</strong></p>
+                <p>Managementul proiectului se realizează pe întreaga durată a proiectului (2 ani). Obiectivul principal este de a garanta atingerea obiectivelor intermediare și finale ale proiectului cu respectarea termenelor stabilite, a bugetului definit și a calității declarate.</p>
+
+                <p><strong>Sarcini</strong></p>
+                <ul>
+                    <li>Gestionarea proiectului: Crearea unui mediu de lucru pozitiv și ajutarea consorțiului în realizarea tuturor activităților.</li>
+                    <li>Reuniunea de lansare: Primul pas operațional pentru prezentarea echipei de proiect, pregătirea instrumentelor (Vademecum de proiect și Plan de calitate), definirea ordinii de zi și planificarea etapelor următoare.</li>
+                    <li>Reuniunea de coordonare: Scopul acestei sarcini este de a actualiza în permanență progresul proiectului prin întâlniri online.</li>
+                    <li>Reuniunea finală: Colectarea rezultatelor și consolidarea rețelei între parteneri pentru a planifica colaborări viitoare.</li>
+                </ul>
+                <p><strong>Rezultate și realizări</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP2 - Pregătire</h4>
+                <p><strong>Condusă de RBF</strong></p>
+                <p>Obiectivul specific al acestui pachet de lucru este de a organiza toate materialele de formare necesare pentru punerea în aplicare a activităților ulterioare.</p>
+
+                <p><strong>Sarcini</strong></p>
+                <ul>
+                    <li>Pregătirea materialelor de formare: Colaborarea constantă între parteneri pentru realizarea conținuturilor utile pentru WP3 și WP4.</li>
+                    <li>Implicarea antrenorilor: Selectarea antrenorilor pe baza experienței și proiectelor anterioare, cu ajutorul comitetelor regionale.</li>
+                    <li>Implicarea școlilor: Selecția școlilor în colaborare cu comitetele regionale și în funcție de indicatori specifici.</li>
+                    <li>Implicarea profesorilor: Alegerea profesorilor va fi corelată cu selecția școlilor și claselor care participă la proiect.</li>
+                    <li>Implicarea închisorilor pentru minori: Gestionarea relațiilor cu închisorile pentru minori datorită experienței anterioare.</li>
+                </ul>
+                <p><strong>Rezultate și realizări</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP3 - Curs de formare pentru antrenori și profesori</h4>
+                <p><strong>Condus de Scholas</strong></p>
+                <p>Obiectivul specific este de a forma antrenorii și profesorii pentru a dobândi noi competențe și a atinge obiectivele stabilite de proiect.</p>
+
+                <p><strong>Sarcini</strong></p>
+                <ul>
+                    <li>Formarea antrenorilor: Pregătirea antrenorilor pe aspecte etico-valoare pentru a atinge obiectivele de incluziune.</li>
+                    <li>Formarea cadrelor didactice: Îmbunătățirea abilităților profesorilor în educația etică și bazată pe valori.</li>
+                </ul>
+                <p><strong>Rezultate și realizări</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP4 - Curs de formare pentru adolescenți</h4>
+                <p><strong>Condus de FPI</strong></p>
+                <p>Obiectivul specific este de a încuraja copiii să participe la activități sportive și fizice, dezvoltându-le abilitățile cognitive, de coordonare și tehnice prin box.</p>
+
+                <p><strong>Sarcini</strong></p>
+                <ul>
+                    <li>Antrenament pentru adolescenți - Curs practic de box: 10 lecții de câte 1 oră, desfășurate pe parcursul a 5 săptămâni.</li>
+                    <li>Antrenament pentru adolescenți - Curs teoretic de box: 9 lecții teoretice online de 1 oră fiecare, pe o platformă de e-learning.</li>
+                </ul>
+                <p><strong>Rezultate și realizări</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP5 - Ateliere de inspirație și întâlniri cu campionii de box</h4>
+                <p><strong>Condus de Scholas</strong></p>
+                <p>Obiectivul specific este de a motiva adolescenții să practice sportul prin întâlniri cu campioni de box care le împărtășesc experiențele de viață și sportive.</p>
+
+                <p><strong>Sarcini</strong></p>
+                <ul>
+                    <li>Atelier: Experiențe inspiraționale axate pe integrare, prevenirea violenței, egalitate de șanse și recuperare socială.</li>
+                </ul>
+            </div>
+        </div>
+
+    }
+    else if (sharedUser.Country == "Italy")
+    {
+        <div class="b4c-container-wkplan">
+            <p>B4C si compone di 7 macro-attività (WP): WP1 - Gestione e coordinamento; WP2 - Preparazione; WP3 - Corso di formazione per 80 allenatori di pugilato e 40 insegnanti di scuola; WP4 - Corso di formazione per adolescenti articolato prima nella parte pratica e poi in quella teorica (approccio learning by doing); WP5 - Workshop ispirazionali e incontri con i campioni di pugilato; WP6 - il Joy summer camp come culmine finale dell'esperienza; WP7 - Attività di comunicazione, impatto e disseminazione.</p>
+
+            <div class="wp">
+                <h4>WP1 - Gestione e coordinamento</h4>
+                <p><strong>Guidato da FPI</strong></p>
+                <p>La gestione del progetto viene svolta durante l'intera durata del progetto (2 anni). L'obiettivo principale della gestione è garantire il raggiungimento degli obiettivi intermedi e finali del progetto nel rispetto delle scadenze fissate, del budget definito e della qualità dichiarata.</p>
+
+                <p><strong>Compiti</strong></p>
+                <ul>
+                    <li>Gestione del progetto: costruire un ambiente di lavoro positivo e aiutare il consorzio a svolgere bene tutte le attività.</li>
+                    <li>Kick-off meeting: primo passo operativo per la presentazione del team, preparazione degli strumenti (Vademecum di progetto e Piano della Qualità), definizione dell'agenda e progettazione dei percorsi di rete.</li>
+                    <li>Riunione di coordinamento: aggiornare continuamente sullo stato di avanzamento del progetto tramite riunioni online.</li>
+                    <li>Incontro finale: raccogliere i risultati e rafforzare la rete tra i partner per pianificare collaborazioni future.</li>
+                </ul>
+                <p><strong>Risultati e risultati</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP2 - Preparazione</h4>
+                <p><strong>Guidato da RBF</strong></p>
+                <p>L'obiettivo specifico di questo pacchetto di lavoro è organizzare tutto il materiale formativo necessario per l'implementazione delle attività successive.</p>
+
+                <p><strong>Compiti</strong></p>
+                <ul>
+                    <li>Preparazione dei materiali formativi: preparazione e realizzazione dei contenuti utili per le attività di formazione previste dai WP3 e WP4.</li>
+                    <li>Coinvolgimento degli allenatori: selezione degli allenatori in base all'esperienza e ai progetti precedenti.</li>
+                    <li>Coinvolgimento delle scuole: selezione delle scuole in collaborazione con i comitati regionali.</li>
+                    <li>Coinvolgimento degli insegnanti: scelta degli insegnanti coerente con la selezione delle scuole e delle classi partecipanti.</li>
+                    <li>Coinvolgimento delle carceri minorili: gestione dei rapporti con le carceri minorili grazie alle attività precedenti.</li>
+                </ul>
+                <p><strong>Risultati e risultati</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP3 - Corso di formazione per allenatori e insegnanti di scuola</h4>
+                <p><strong>Condotto da Scholas</strong></p>
+                <p>L'obiettivo specifico è formare i formatori per ottenere nuove competenze e raggiungere gli obiettivi fissati dal progetto.</p>
+
+                <p><strong>Compiti</strong></p>
+                <ul>
+                    <li>Formazione degli allenatori: formare gli allenatori sul piano etico-valoriale per raggiungere gli obiettivi di inclusione.</li>
+                    <li>Formazione degli insegnanti: completare la preparazione sportiva e raggiungere gli obiettivi di inclusione.</li>
+                </ul>
+                <p><strong>Risultati e risultati</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP4 - Corso di formazione per adolescenti</h4>
+                <p><strong>Guidato da FPI</strong></p>
+                <p>L'obiettivo specifico è incoraggiare i bambini a partecipare allo sport e all'attività fisica attraverso la boxe.</p>
+
+                <p><strong>Compiti</strong></p>
+                <ul>
+                    <li>Antrenamento per adolescenti - Corso pratico di pugilato: 10 lezioni di 1 ora, svolte su 5 settimane.</li>
+                    <li>Antrenamento per adolescenti - Corso teorico di pugilato: 9 lezioni teoriche online di 1 ora ciascuna.</li>
+                </ul>
+                <p><strong>Risultati e risultati</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP5 - Workshop di ispirazione e incontri con i campioni di boxe</h4>
+                <p><strong>Condotto da Scholas</strong></p>
+                <p>L'obiettivo specifico è motivare gli adolescenti a praticare sport attraverso incontri con campioni di boxe.</p>
+
+                <p><strong>Compiti</strong></p>
+                <ul>
+                    <li>Workshop: esperienza ispirativa e partecipativa, incentrata su temi di integrazione, prevenzione della violenza e pari opportunità.</li>
+                </ul>
+            </div>
+        </div>
+
+    }
+    else if (sharedUser.Country == "Spain")
+    {
+        <div class="b4c-container-wkplan">
+            <p>B4C consta de 7 macroactividades (WP): WP1 - Gestión y coordinación; WP2 - Preparación; WP3 - Curso de formación para 80 entrenadores de boxeo y 40 profesores de escuela; WP4 - Curso de formación para adolescentes articulado primero en la parte práctica y luego en la teórica (enfoque learning by doing); WP5 - Talleres de inspiración y encuentros con los campeones de boxeo; WP6 - El campamento de verano Joy como culminación final de la experiencia; WP7 - Actividades de comunicación, impacto y difusión.</p>
+
+            <div class="wp">
+                <h4>WP1 – Gestión y Coordinación</h4>
+                <p><strong>Liderado por FPI</strong></p>
+                <p>La gestión del proyecto se lleva a cabo durante toda la duración del mismo (2 años). El principal objetivo de la gestión es garantizar la consecución de los objetivos intermedios y finales del proyecto con respecto a los plazos fijados, el presupuesto definido y la calidad declarada.</p>
+
+                <p><strong>Tareas</strong></p>
+                <ul>
+                    <li>Gestión del proyecto: Crear un entorno de trabajo positivo y ayudar al consorcio a realizar todas las actividades del proyecto.</li>
+                    <li>Kick-off meeting: Presentar al equipo del proyecto, las herramientas, el orden del día y diseñar los siguientes pasos.</li>
+                    <li>Reuniones de coordinación: Reuniones en línea para actualizar el progreso y asegurar discusiones operativas.</li>
+                    <li>Reunión final: Recoger resultados y fortalecer la red entre los socios.</li>
+                </ul>
+                <p><strong>Resultados y productos</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP2 – Preparación</h4>
+                <p><strong>Liderado por RBF</strong></p>
+                <p>Objetivo: Organizar materiales de formación y seleccionar entrenadores, profesores, escuelas y prisiones juveniles para las actividades posteriores.</p>
+                <p><strong>Tareas</strong></p>
+                <ul>
+                    <li>Preparar materiales de formación para WP3 y WP4.</li>
+                    <li>Seleccionar entrenadores basados en experiencia y participación previa en proyectos.</li>
+                    <li>Seleccionar escuelas a través de la red de FPI, trabajando con comités regionales.</li>
+                    <li>Involucrar prisiones juveniles, aprovechando relaciones y experiencia previas.</li>
+                </ul>
+                <p><strong>Resultados y productos</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP3 – Curso de Formación para Entrenadores y Maestros de Escuela</h4>
+                <p><strong>Dirigido por Scholas</strong></p>
+                <p>Objetivo: Formar a entrenadores y profesores para adquirir nuevas competencias y lograr los objetivos de inclusión fijados por el proyecto.</p>
+                <p><strong>Tareas</strong></p>
+                <ul>
+                    <li>Formación de entrenadores: Formación enfocada en valores éticos para complementar su formación deportiva y apoyar los objetivos de inclusión.</li>
+                    <li>Formación de profesores: Mejorar la capacidad de los profesores para involucrar a los estudiantes en la educación basada en valores éticos.</li>
+                </ul>
+                <p><strong>Resultados y productos</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP4 – Curso de Formación para Adolescentes</h4>
+                <p><strong>Liderado por FPI</strong></p>
+                <p>Objetivo: Fomentar la participación de los adolescentes en actividades físicas, entrenándolos en habilidades cognitivas, coordinativas y tácticas de boxeo.</p>
+                <p><strong>Tareas</strong></p>
+                <ul>
+                    <li>Curso práctico de boxeo: 10 clases en 5 semanas durante el horario escolar.</li>
+                    <li>Curso teórico de boxeo: 9 lecciones en línea sobre teoría del boxeo a través de una plataforma de e-learning.</li>
+                </ul>
+                <p><strong>Resultados y productos</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP5 – Talleres de Inspiración y Reuniones con Campeones de Boxeo</h4>
+                <p><strong>Dirigido por Scholas</strong></p>
+                <p>Objetivo: Motivar a los adolescentes a practicar deporte a través de encuentros con campeones de boxeo que compartan sus experiencias de vida y deportivas.</p>
+                <p><strong>Tareas</strong></p>
+                <ul>
+                    <li>Talleres: Experiencias inspiradoras centradas en la integración, prevención de la violencia, igualdad de oportunidades y recuperación social.</li>
+                </ul>
+            </div>
+        </div>
+
+    }
+    else
+    {
+        <div class="b4c-container-wkplan">
+            <p>B4C consists of 7 macro-activities (WP): WP1 – Management and coordination; WP2 – Preparation; WP3 – Training course for 80 boxing coaches and 40 schoolteachers; WP4 – Training course for teens articulated first in the practical part and then in the theory (learning by doing approach); WP5 – Inspirational workshops and meetings with the Boxing Champions; WP6 – the Joy summer camp as the final culmination of the experience; WP7 – Communication, Impact and Dissemination activities.</p>
+
+            <div class="wp">
+                <h4>WP1 – Management and Coordination</h4>
+                <p><strong>Leaded by FPI</strong></p>
+                <p>Project Management is carried out during the entire project duration (2 years). The main objective is to guarantee the achievement of goals within deadlines, budget, and declared quality.</p>
+
+                <p><strong>Tasks</strong></p>
+                <ul>
+                    <li>Project management: Build a positive work environment and help the consortium perform all project activities.</li>
+                    <li>Kick-off meeting: Present the project team, tools, agenda, and design next paths.</li>
+                    <li>Coordination meeting: Online meetings to update progress and ensure operational discussion.</li>
+                    <li>Final meeting: Collect results and strengthen the network among partners.</li>
+                </ul>
+                <p><strong>Outputs and Deliverables</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP2 – Preparation</h4>
+                <p><strong>Leaded by RBF</strong></p>
+                <p>Objective: Organize training materials and select coaches, teachers, schools, and juvenile prisons for subsequent activities.</p>
+                <p><strong>Tasks</strong></p>
+                <ul>
+                    <li>Prepare training materials for WP3 and WP4.</li>
+                    <li>Select coaches based on experience and previous project participation.</li>
+                    <li>Select schools through FPI's network, working with regional committees.</li>
+                    <li>Involve juvenile prisons, leveraging prior relationships and expertise.</li>
+                </ul>
+                <p><strong>Outputs and Deliverables</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP3 – Training Course for Coaches and Schoolteachers</h4>
+                <p><strong>Leaded by Scholas</strong></p>
+                <p>Objective: Train coaches and teachers to gain new competencies and achieve the inclusion goals set by the project.</p>
+                <p><strong>Tasks</strong></p>
+                <ul>
+                    <li>Coaches training: Ethical-value focused training to complement sports background and support inclusion objectives.</li>
+                    <li>Schoolteachers training: Training to enhance teachers' ability to engage students on ethical and value-based education.</li>
+                </ul>
+                <p><strong>Outputs and Deliverables</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP4 – Training Course for Teens</h4>
+                <p><strong>Leaded by FPI</strong></p>
+                <p>Objective: Encourage teens to participate in physical activity, training them in cognitive, coordination, and tactical boxing skills.</p>
+                <p><strong>Tasks</strong></p>
+                <ul>
+                    <li>Practical Boxing Course: 10 classes over 5 weeks during school hours.</li>
+                    <li>Theoretical Boxing Course: 9 online lessons on boxing theory through an e-learning platform.</li>
+                </ul>
+                <p><strong>Outputs and Deliverables</strong></p>
+            </div>
+
+            <div class="wp">
+                <h4>WP5 – Inspirational Workshops and Meetings with Boxing Champions</h4>
+                <p><strong>Leaded by Scholas</strong></p>
+                <p>Objective: Motivate teens to practice sports through meetings with boxing champions who share their life and sports experiences.</p>
+                <p><strong>Tasks</strong></p>
+                <ul>
+                    <li>Workshops: Inspirational experiences focused on integration, violence prevention, equal opportunities, and social recovery.</li>
+                </ul>
+            </div>
+        </div>
+    }
+</div>
+@code {
+    public int i;
+    public string strategiesObjectives;
+    public string partners;
+    public string workPlan;
+    public string gallery;
+    public string elearning;
+    public string contact;
+    public string partnersPage = "federations";
+    public string strategiesObjectivesPage = "strategiesobjectives";
+    public string workPlanPage = "workplan";
+    public string galleryPage = "gallery";
+    public string elearningPage = "elearning";
+    public string contactPage = "contact";
+    protected override void OnInitialized()
+    {
+        if (sharedUser.Country == "Romania")
+        {
+            strategiesObjectives = "Strategii&Obiective";
+            partners = "Parteneri";
+            workPlan = "Plan de lucru";
+            gallery = "Galerie";
+            elearning = "E-Learning";
+            contact = "Contact";
+        }
+        else if (sharedUser.Country == "Italy")
+        {
+            strategiesObjectives = "Strategie&Obiettivi";
+            partners = "Parteneri";
+            workPlan = "Piano di lavoro";
+            gallery = "Galleria";
+            elearning = "E-Learning";
+            contact = "Contatto";
+        }
+        else if (sharedUser.Country == "Spain")
+        {
+            strategiesObjectives = "Estrategias&Objetivos";
+            partners = "Socios";
+            workPlan = "Plan de trabajo";
+            gallery = "Galería";
+            elearning = "E-Learning";
+            contact = "Contacto";
+        }
+        else
+        {
+            strategiesObjectives = "Strategies&Objectives";
+            partners = "Partners";
+            workPlan = "Work plan";
+            gallery = "Gallery";
+            elearning = "E-Learning";
+            contact = "Contact";
+        }
+    }
+}

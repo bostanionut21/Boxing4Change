@@ -28,8 +28,8 @@
         <ApplicationId> com.companyname.mockup</ApplicationId>
 
         <!-- Versions -->
-        <ApplicationDisplayVersion>4.0</ApplicationDisplayVersion>
-        <ApplicationVersion>4</ApplicationVersion>
+        <ApplicationDisplayVersion>6.3</ApplicationDisplayVersion>
+        <ApplicationVersion>7</ApplicationVersion>
 
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>

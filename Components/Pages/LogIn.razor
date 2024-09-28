@@ -5,7 +5,7 @@
 @inject UserReq UserReqService
 @inject SharedUser sharedUser
 @inject NavigatorService NavigatorService
-@inject NavigationManager NavigationManagement
+@inject NavigationManager Navigation
 
 <div class="parent_signin">
     <div class="signin_signup">
@@ -19,10 +19,9 @@
 </div>
 
 <div class="Welcome_txt">
-    <div> Welcome to</div>
-    <div>Boxing 4 Change</div>
+    <div><img src="./B4Clogo.png" alt="Alternate Text" /></div>
 </div>
-
+<div><img src="~/B4C logo.png" alt="" /></div>
 <div class="LogIn">
     <EditForm Model="@loginModel" OnValidSubmit="@HandleValidSubmit">
         <DataAnnotationsValidator />
@@ -65,18 +64,11 @@
     private string password { get; set; }
     private bool emailNotVerified { get; set; } = false; 
 
-    protected override void OnInitialized()
-    {
-
-        NavigatorService.NavigationManager = NavigationManagement;
-
-        base.OnInitialized();
-    }
     private void NavigateToSignUp()
     {
         try
         {
-            NavigationManagement.NavigateTo("signup");
+            Navigation.NavigateTo("signup");
         }
         catch (Exception ex)
         {
@@ -107,12 +99,12 @@
 
                     if(user.Role == "Student")
                     {
-                        await App.Current.MainPage.Navigation.PushModalAsync(new NewPage1(NavigatorService, sharedUser));
+                        Navigation.NavigateTo("federations");
                     }
                     else
                     if(user.Role == "Trainer")
                     {
-                        await App.Current.MainPage.Navigation.PushModalAsync(new NewPage1(NavigatorService, sharedUser));
+                        Navigation.NavigateTo("federations");
                     }
                 }
                 else

@@ -13,7 +13,7 @@ public partial class NewPage1 : ContentPage
     //private readonly Video _video;
     private string name;
     private string welcome;
-    private string videoLessons;
+    private string strategiesObjectives;
     private string interviews;
     private string tutorials;
     private string partners;
@@ -41,15 +41,15 @@ public partial class NewPage1 : ContentPage
             }
         }
     }
-    public string VideoLessons
+    public string StrategiesObjectives
     {
-        get => videoLessons;
+        get => strategiesObjectives;
         set
         {
-            if (videoLessons != value)
+            if (strategiesObjectives != value)
             {
-                videoLessons = value;
-                OnPropertyChanged(nameof(videoLessons)); // Notify UI of the change
+                strategiesObjectives = value;
+                OnPropertyChanged(nameof(strategiesObjectives)); // Notify UI of the change
             }
         }
     }
@@ -97,7 +97,7 @@ public partial class NewPage1 : ContentPage
         if(sharedUser.Country== "Romania")
         {
             welcome = "Bine ai venit,";
-            videoLessons = "Lecții video";
+            strategiesObjectives = "Strategii&Obiective";
             interviews = "Interviuri";
             tutorials = "Tutoriale";
             partners = "Parteneri";
@@ -105,7 +105,7 @@ public partial class NewPage1 : ContentPage
         else if (sharedUser.Country=="Italy")
         {
             welcome = "Benvenuti,";
-            videoLessons = "Lezioni video";
+            strategiesObjectives = "Strategie&Obiettivi";
             interviews = "Interviste";
             tutorials = "Tutorial";
             partners = "Partner";
@@ -113,7 +113,7 @@ public partial class NewPage1 : ContentPage
         else if (sharedUser.Country == "Spain")
         {
             welcome = "Bienvenido,";
-            videoLessons = "Lecciones en vídeo";
+            strategiesObjectives = "Estrategias&Objetivos";
             interviews = "Entrevistas";
             tutorials = "Tutoriales";
             partners = "Socios";

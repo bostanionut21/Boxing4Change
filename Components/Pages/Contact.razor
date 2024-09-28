@@ -1,0 +1,96 @@
+﻿@page "/contact"
+@layout StudentLayout
+@inject NavigationManager Navigation
+@inject NavigatorService NavigatorService
+@inject SharedUser sharedUser
+
+<div class="all">
+    <div class="overall">
+        <p class="others" @onclick="()=> Navigation.NavigateTo(partnersPage)">@partners</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(strategiesObjectivesPage)">@strategiesObjectives</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(workPlanPage)">@workPlan</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(galleryPage)">@gallery</p>
+        <p class="others" onclick="window.location.href='https://www.fpiservizi.it/elearning/login.php'">@elearning</p>
+        <p class="main_page" @onclick="()=> Navigation.NavigateTo(contactPage)">@contact</p>
+    </div>
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+
+        <div class="contact-info">
+            <p>
+                <strong>Email:</strong>
+                info@boxingforchange.com
+            </p>
+        </div>
+
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+@code {
+    public int i;
+    public string strategiesObjectives;
+    public string partners;
+    public string workPlan;
+    public string gallery;
+    public string elearning;
+    public string contact;
+    public string partnersPage = "federations";
+    public string strategiesObjectivesPage = "strategiesobjectives";
+    public string workPlanPage = "workplan";
+    public string galleryPage = "gallery";
+    public string elearningPage = "elearning";
+    public string contactPage = "contact";
+    protected override void OnInitialized()
+    {
+        if (sharedUser.Country == "Romania")
+        {
+            strategiesObjectives = "Strategii&Obiective";
+            partners = "Parteneri";
+            workPlan = "Plan de lucru";
+            gallery = "Galerie";
+            elearning = "E-Learning";
+            contact = "Contact";
+        }
+        else if (sharedUser.Country == "Italy")
+        {
+            strategiesObjectives = "Strategie&Obiettivi";
+            partners = "Parteneri";
+            workPlan = "Piano di lavoro";
+            gallery = "Galleria";
+            elearning = "E-Learning";
+            contact = "Contatto";
+        }
+        else if (sharedUser.Country == "Spain")
+        {
+            strategiesObjectives = "Estrategias&Objetivos";
+            partners = "Socios";
+            workPlan = "Plan de trabajo";
+            gallery = "Galería";
+            elearning = "E-Learning";
+            contact = "Contacto";
+        }
+        else
+        {
+            strategiesObjectives = "Strategies&Objectives";
+            partners = "Partners";
+            workPlan = "Work plan";
+            gallery = "Gallery";
+            elearning = "E-Learning";
+            contact = "Contact";
+        }
+    }
+}

@@ -1,0 +1,138 @@
+﻿@page "/strategiesobjectives"
+@layout StudentLayout
+@inject NavigationManager Navigation
+@inject NavigatorService NavigatorService
+@inject SharedUser sharedUser
+
+<div class="all">
+    <div class="overall">
+        <p class="others" @onclick="()=> Navigation.NavigateTo(partnersPage)">@partners</p>
+        <p class="main_page" @onclick="()=> Navigation.NavigateTo(strategiesObjectivesPage)">@strategiesObjectives</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(workPlanPage)">@workPlan</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(galleryPage)">@gallery</p>
+        <p class="others" onclick="window.location.href='https://www.fpiservizi.it/elearning/login.php'">@elearning</p>
+        <p class="others" @onclick="()=> Navigation.NavigateTo(contactPage)">@contact</p>
+    </div>
+@if(sharedUser.Country == "Romania")
+{
+        <div class="b4c-container">
+            <p>
+                Proiectul "Boxing for Change (B4C) - Cu boxul înveți" este o inițiativă de cooperare transnațională cu o durată de 24 de luni, finanțată de Programul Erasmus + - Parteneriat de cooperare. Cu scopul de a dezvolta și implementa metode educaționale inovatoare care să pună în valoare boxul, "arta nobilă", ca instrument de promovare a incluziunii sociale și de prevenire a violenței. Proiectul are o dimensiune și o valoare europeană și acordă o atenție deosebită Regiunii Mediteraneene, implicând parteneri și beneficiari din Italia, Spania și România. Unul dintre aspectele principale pe care proiectul le subliniază în cadrul priorității "protejarea integrității" este legătura dintre sport și educație, unde sportul (boxul) este un cadru pentru dezvoltarea abilităților personale, sociale și de învățare și pentru promovarea toleranței, solidarității, incluziunii, precum și a altor valori.
+            </p>
+
+            <h3>Obiective specifice</h3>
+            <ul>
+                <li>Să semnaleze problemele de violență, intoleranță și/sau excluziune socială în rândul adolescenților</li>
+                <li>Să propună o contribuție/soluție concretă, concepută în cooperare cu federațiile de box, un ONG internațional, asociații sportive și experți externi din trei țări diferite ale Europei, fiecare dintre acestea oferind un sprijin esențial planului teoretic al proiectului</li>
+                <li>Crearea unei noi metodologii de promovare a incluziunii și de prevenire a violenței prin box: mesajul este decodificat printr-un format practic și teoretic ca nou vehicul de sensibilizare a adolescenților cu privire la valorile sportive; profesorii și tehnicienii de box sunt instruiți cu privire la metodologie</li>
+                <li>Să testeze modelul conceput în cele 3 țări implicate pe un eșantion de cel puțin 2000 de adolescenți și mai mult de 120 de educatori și să aspire la implementarea sa în alte țări ale UE ca follow-up</li>
+                <li>Promovarea incluziunii adolescenților beneficiari în sportul de masă ca școală a vieții printr-o nouă metodă și experiență calificată</li>
+            </ul>
+        </div>
+    }
+    else if(sharedUser.Country == "Italy")
+    {
+        <div class="b4c-container">
+            <p>
+                Il progetto "Boxing for Change (B4C) - Con la boxe si impara" è un'iniziativa di cooperazione transnazionale della durata di 24 mesi finanziata dal Programma Erasmus + - Partenariato di cooperazione. Con l'obiettivo di sviluppare e implementare metodi educativi innovativi che valorizzino la boxe, la "noble art", come strumento per promuovere l'inclusione sociale e prevenire la violenza. Il progetto ha una dimensione e una valenza europea e presta particolare attenzione alla Regione del Mediterraneo, coinvolgendo partner e beneficiari provenienti da Italia, Spagna e Romania. Uno degli aspetti principali che il progetto sottolinea nell'ambito della priorità "proteggere l'integrità" è il legame tra sport ed educazione, dove lo sport (il pugilato) è un contesto per lo sviluppo di abilità personali, sociali e di apprendimento e per la promozione della tolleranza, della solidarietà, dell'inclusione e di altri valori.
+            </p>
+
+            <h3>Obiettivi specifici</h3>
+            <ul>
+                <li>Evidenziare i problemi di violenza, intolleranza e/o esclusione sociale tra gli adolescenti</li>
+                <li>Proporre un contributo/soluzione concreto, progettato in collaborazione con Federazioni pugilistiche, una ONG internazionale, Associazioni sportive ed esperti esterni provenienti da tre diversi paesi d'Europa, ciascuno dei quali dia un supporto essenziale al piano teorico del progetto</li>
+                <li>Creare una nuova metodologia per promuovere l'inclusione e prevenire la violenza attraverso il pugilato: il messaggio viene decodificato da un format pratico e tattile come nuovo veicolo di sensibilizzazione ai valori dello sport tra gli adolescenti; insegnanti e tecnici di pugilato vengono formati sulla metodologia</li>
+                <li>Testare il modello concepito nei 3 paesi coinvolti su un gruppo campione di almeno 2000 studenti adolescenti e più di 120 educatori e aspirare alla sua implementazione in altri paesi dell'UE come follow-up</li>
+                <li>Promuovere l'inclusione degli adolescenti beneficiari nello sport di base come scuola di vita attraverso un nuovo metodo ed esperienza qualificati</li>
+            </ul>
+        </div>
+    }
+    else if(sharedUser.Country == "Spain")
+    {
+        <div class="b4c-container">
+            <p>
+                El proyecto "Boxing for Change (B4C) - Con el boxeo se aprende" es una iniciativa de cooperación transnacional de 24 meses de duración financiada por el Programa Erasmus + - Asociación para la Cooperación. Su objetivo es desarrollar y aplicar métodos educativos innovadores que potencien el boxeo, el "noble arte", como herramienta para promover la inclusión social y prevenir la violencia. El proyecto tiene una dimensión y un valor europeos y presta especial atención a la región mediterránea, implicando a socios y beneficiarios de Italia, España y Rumanía. Uno de los principales aspectos que subraya el proyecto dentro de la prioridad "proteger la integridad" es el vínculo entre deporte y educación, donde el deporte (boxeo) es un marco para desarrollar habilidades personales, sociales y de aprendizaje y para promover la tolerancia, la solidaridad, la inclusión, así como otros valores.
+            </p>
+
+            <h3>Objetivos específicos</h3>
+            <ul>
+                <li>Señalar los problemas de violencia, intolerancia y/o exclusión social entre los adolescentes</li>
+                <li>Proponer una contribución/solución concreta, diseñada en cooperación con Federaciones de Boxeo, una ONG internacional, Asociaciones Deportivas y expertos externos de tres países diferentes de Europa, cada uno de ellos dando un apoyo esencial al plan teórico del proyecto</li>
+                <li>Crear una nueva metodología para promover la inclusión y prevenir la violencia a través del boxeo: el mensaje se decodifica mediante un formato práctico y torico como nuevo vehículo de concienciación de valores deportivos entre los adolescentes; se forma a profesores de escuela y técnicos de boxeo sobre la metodología</li>
+                <li>Poner a prueba el modelo concebido en los tres países participantes con una muestra de al menos 2.000 estudiantes adolescentes y más de 120 educadores, y aspirar a su aplicación en otros países de la UE como seguimiento</li>
+                <li>Promover la inclusión de los adolescentes beneficiarios en el deporte de base como escuela de vida a través de un nuevo método y experiencia cualificados</li>
+            </ul>
+        </div>
+    }
+    else
+    {
+        <div class="b4c-container">
+            <p>
+                The project “Boxing for Change (B4C) – With boxing you learn” is a 24-month transnational cooperation initiative financed by the Erasmus+ Programme – Cooperation Partnership. With the aim of developing and implementing innovative educational methods that enhance boxing, the “noble art,” as a tool to promote social inclusion and prevent violence. The project has a European dimension and value and pays particular attention to the Mediterranean Region, involving partners and beneficiaries from Italy, Spain, and Romania. One of the main aspects that the project underlines within the priority “protect integrity” is the link between sport and education, where the sport (boxing) is a framework for developing personal, social, and learning skills and for promoting tolerance, solidarity, inclusiveness, as well as other values.
+            </p>
+
+            <h3>Specific Objectives</h3>
+            <ul>
+                <li>To point out the problems of violence, intolerance, and/or social exclusion among teens.</li>
+                <li>To propose a concrete contribution/solution, designed in cooperation with Boxing Federations, an international NGO, Sport Associations, and external experts from three different countries of Europe, each of them giving essential support to the theoretical plan of the project.</li>
+                <li>To create a new methodology for promoting inclusion and preventing violence through boxing: the message is decoded by a practical and theoretical format as a new vehicle of sport value awareness-raising among teens. Schoolteachers and boxing technicians are trained on the methodology.</li>
+                <li>To test the conceived model in the three involved countries on a sample group of at least 2000 teens students and more than 120 educators, aspiring to its implementation in other EU countries as a follow-up.</li>
+                <li>To promote the inclusion of the beneficiary teens in grassroots sport as a school of life through a new qualified method and experience.</li>
+            </ul>
+        </div>
+    }
+</div>
+@code {
+    public int i;
+    public string strategiesObjectives;
+    public string partners;
+    public string workPlan;
+    public string gallery;
+    public string elearning;
+    public string contact;
+    public string partnersPage = "federations";
+    public string strategiesObjectivesPage = "strategiesobjectives";
+    public string workPlanPage = "workplan";
+    public string galleryPage = "gallery";
+    public string elearningPage = "elearning";
+    public string contactPage = "contact";
+    protected override void OnInitialized()
+    {
+        if (sharedUser.Country == "Romania")
+        {
+            strategiesObjectives = "Strategii&Obiective";
+            partners = "Parteneri";
+            workPlan = "Plan de lucru";
+            gallery = "Galerie";
+            elearning = "E-Learning";
+            contact = "Contact";
+        }
+        else if (sharedUser.Country == "Italy")
+        {
+            strategiesObjectives = "Strategie&Obiettivi";
+            partners = "Parteneri";
+            workPlan = "Piano di lavoro";
+            gallery = "Galleria";
+            elearning = "E-Learning";
+            contact = "Contatto";
+        }
+        else if (sharedUser.Country == "Spain")
+        {
+            strategiesObjectives = "Estrategias&Objetivos";
+            partners = "Socios";
+            workPlan = "Plan de trabajo";
+            gallery = "Galería";
+            elearning = "E-Learning";
+            contact = "Contacto";
+        }
+        else
+        {
+            strategiesObjectives = "Strategies&Objectives";
+            partners = "Partners";
+            workPlan = "Work plan";
+            gallery = "Gallery";
+            elearning = "E-Learning";
+            contact = "Contact";
+        }
+    }
+}
