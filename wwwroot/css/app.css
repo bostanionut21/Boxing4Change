@@ -86,522 +86,183 @@ h1:focus {
 }
 
 @media (max-width: 768px) {
-    .parent_signin {
+    .top-part button {
+        margin: 80px 30px 0 30px;
+        background-color: transparent; /* Make the background transparent */
+        border: none; /* Remove the button border */
+        cursor: pointer;
+    }
+
+    .container {
         display: grid;
-        place-items: center;
+        grid-template-columns: repeat(2, 1fr); /* Create 2 equal-width columns */
+        grid-template-rows: auto; /* Rows adjust to the content */
+        gap: 20px; /* Adjust gap between the divs */
+        margin:40px 0 0 0;
+        margin-bottom:40px;
     }
 
-    .signin_signup {
-        display: inline-flex;
-        background-color: #539adb;
-        align-items: center;
-        margin-top: 10%;
-        width: 85%;
-        height: 6.3vh;
-        border-radius: 13px;
-        justify-content: space-between;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-
-    .signin {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: roboto-bold;
-        font-size: 20px;
-        color: #FAFAFA;
-        background-color: #1D6CB5;
-        width: 55%;
-        height: 100%;
-        border-radius: 13px;
-    }
-
-    .signup {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: roboto-bold;
-        font-size: 20px;
-        color: #FAFAFA;
-        width: 55%;
-        height: 100%;
-        border-radius: 13px;
-    }
-
-    .Welcome_txt {
-        text-align: center;
-        font-family: robotoslab-regular;
-        color: #000000;
-        padding-top: 50px;
-    }
-
-        .Welcome_txt > div:first-child {
-            font-size: 34px;
-        }
-
-        .Welcome_txt > div:last-child {
-            font-size: 28px;
-        }
-
-    /*Form*/
-
-    .LogIn {
-        margin: 45px 0 0 0;
-    }
-
-    .form-group_login {
-        width: 80%;
-        height: 60px;
-        margin: 35px 0 0 40px;
-        border: 1.2px solid #ccc;
-        border-radius: 12px;
-        font-size: 12px;
-        flex-direction: column;
-        padding-left: 35px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-    
-    .form_control_login {
-        height: 60px;
-        width: 100%;
-        border: none; /* Removes border */
-        background: transparent; /* Removes background color */
-        color: inherit; /* Inherits text color from parent */
-        box-shadow: none; /* Removes any box shadow */
-    }
-
-        .form_control_login:focus {
-            outline: none; /* Removes the default focus outline */
-            border: none; /* Ensures no border is shown */
-            box-shadow: none; /* Removes any box shadow that might appear on focus */
-            background: transparent; /* Keeps the background transparent */
-            color: inherit; /* Inherits text color from the parent */
-            outline: none;
-        }
-
-        .LogIn .form-group_login input.form_control_login:valid {
-            outline: none;
-        }
-
-        .LogIn .form-group_login input.form_control_login:invalid {
-            outline: none;
-        }
-
-    .forgot {
-        font-weight: bold;
-        text-decoration: underline;
-        margin-top: 23px;
-        margin-left: 60%;
-        font-size: 13px;
-        color: black;
-    }
-
-        .forgot a {
-            color: black;
-        }
-
-    .btn-primary_login {
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        background: #1D6CB5;
-        font-size: 18px;
-        border-radius: 10px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 45%;
-        height: 50px; /* Adjust height as needed */
-        color: white;
-        border: none;
-        margin-left: 27%;
-        margin-top: 50px;
-    }
-
-    Logo_img.img{
-        margin-left:20%;
-        margin-top:20px;
-    }
-    /*signup*/
-    .SignUp {
-        margin: 25px 10px 0 10px;
-    }
-
-    .form-group_signup {
-        width: 80%;
-        height: 60px;
-        margin: 35px 0 0 40px;
-        border: 1.2px solid #ccc;
-        border-radius: 12px;
-        font-size: 12px;
-        flex-direction: column;
-        padding-left: 35px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-
-    .form_control_signup {
-        height: 60px;
-        width: 100%;
-        border: none; /* Removes border */
-        background: transparent; /* Removes background color */
-        color: inherit; /* Inherits text color from parent */
-        box-shadow: none; /* Removes any box shadow */
-    }
-
-    .btn-primary_signup {
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        background: #1D6CB5;
-        font-size: 18px;
-        border-radius: 10px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 45%;
-        height: 50px; /* Adjust height as needed */
-        color: white;
-        border: none;
-        margin-left: 27%;
-        margin-top: 50px;
-        margin-bottom: 25px;
-    }
-
-            .form_control_signup:focus {
-                outline: none; /* Removes the default focus outline */
-                border: none; /* Ensures no border is shown */
-                box-shadow: none; /* Removes any box shadow that might appear on focus */
-                background: transparent; /* Keeps the background transparent */
-                color: inherit; /* Inherits text color from the parent */
-                outline: none;
-            }
-
-            .SignUp .form-group_signup input.form_control_signup:valid {
-                outline: none;
-            }
-
-            .SignUp .form-group_signup input.form_control_signup:invalid {
-                outline: none;
-            }
-
-    .selector {
-        width: 80%;
-        height: 90px;
-        margin: 35px 0 0 40px;
-        border: 1.2px solid #ccc;
-        border-radius: 12px;
-        font-size: 12px;
-        flex-direction: column;
-        padding-left: 35px;
-        padding-right: 35px;
-        padding-top: 15px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-
-    .button-group {
-        margin-top: 30px;
-        display: flex; /* Enables flexbox layout */
-        margin-left:40px;
-        margin-right:40px;
-        justify-content: space-between; /* Distributes space evenly between items */
-        align-items: center; /* Centers items vertically (optional) */
-        padding: 1rem; /* Optional: Add padding around the container */
-
-    }
-
-    .button {
-        color: #333; /* Text color */
-        border: 1.2px solid #ccc;
-        border-radius: 18px; /* Rounded corners */
-        padding: 0.4rem 1rem; /* Padding inside buttons */
-        cursor: pointer; /* Indicate clickable button */
-        font-size: 0.9rem; /* Font size */
-        width: 40%;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-        .button:focus {
-            outline: none;
-        }
-    /* Primary button style */
-    .btn-primary {
-        border: 1.2px solid red;
-        color: inherit; /* Inherits text color from parent */
+    .box {
+        position: relative;
         background-color: white;
-    }
-        .btn-primary:focus,
-        .btn-primary:active{
-            border: 1.2px solid red;
-            background-color: white;
-            color: inherit;
-        }
-    .btn-secondary {
-        border: 1.2px solid #ccc;
-        color: inherit; /* Inherits text color from parent */
-        background-color: white;
-    }
-    /* Additional styles specific to the form fields */
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group input[type="password"] {
-        width: 100%; /* Adjust width as needed */
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group input[type="password"],
-    .btn {
-        height: 40px; /* Adjust height as needed */
-    }
-
-        .form-group input[type="text"]:focus,
-        .form-group input[type="email"]:focus,
-        .form-group input[type="password"]:focus {
-            border-bottom-color: #7875B5;
-            outline: none;
-        }
-
-    .parent_signin2 {
-        display: grid;
-        place-items: center;
-    }
-
-    .signin_signup2 {
-        display: inline-flex;
-        background-color: #4a88c2;
-        align-items: center;
-        margin-top: 10%;
-        width: 85%;
-        height: 6.3vh;
-        border-radius: 13px;
-        justify-content: space-between;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-
-    .signin2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: roboto-bold;
-        font-size: 20px;
-        color: #FAFAFA;
-        width: 55%;
-        height: 100%;
-        border-radius: 13px;
-    }
-
-    .signup2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: roboto-bold;
-        font-size: 20px;
-        color: #FAFAFA;
-        background-color: #1D6CB5;
-        width: 55%;
-        height: 100%;
-        border-radius: 13px;
-    }
-    /*entrypage*/
-    .welcome-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 60vh;
-    }
-
-    .welcome-text {
+        height: 200px;
+        width: 100%;
         text-align: center;
-        margin-bottom: 20px;
-    }
-
-        .welcome-text h1 {
-            font-size: 36px;
-            color: #333;
-        }
-
-        .welcome-text p {
-            font-size: 18px;
-            color: #666;
-        }
-
-    .video-container {
-        width: 90%; /* Adjust width as needed */
-        margin-top: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-        .video-container iframe {
-            display: block;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    
-    /*Email Confirmation*/
-    .confirm-email-container {
-        text-align: center;
-        margin-top: 50px;
-    }
-
-        .confirm-email-container h3 {
-            margin-bottom: 20px;
-            margin-top: 20px;
-        }
-
-        .confirm-email-container p {
-            margin: 50px 20px 30px 20px;
-            font-size: 14px;
-            color: black;
-            font-family: robotoslab-regular;
-        }
-
-        .confirm-email-container button {
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            background: #1D6CB5;
-            font-size: 18px;
-            border-radius: 10px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45%;
-            height: 50px; /* Adjust height as needed */
-            color: white;
-            border: none;
-            margin-left: 27%;
-            margin-top: 70px;
-        }
-
-            .confirm-email-container button:focus{
-                outline:none;
-            }
-
-        /*Forgot Password*/
-    .back_btn {
-        margin: 50px 0 0 40px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 7px;
-        width: 35px;
-        height: 35px;
         border-radius: 4px;
-        border: 1px solid rgba(128, 128, 128, 0.35); /* Fixed border property to add a solid border */
-        background-color: white;
-        display: flex; /* Enable Flexbox layout */
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        padding: 0; /* Remove default padding */
-        cursor: pointer; /* Pointer cursor on hover */
-        outline: none; /* Remove default focus outline */
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
 
-    .forgot-password-container h3 {
-        margin: 50px 0 10px 40px;
-        font: roboto-bold;
-    }
-
-    .forgot-password-container p {
-        margin: 30px 10px 20px 40px;
-        font: robotoslab-regular;
-        font-size: 13px;
-        line-height: 1.4;
-    }
-
-    /*StudentUI*/
-    .student_ui {
-        display:block;
-    }
-
-        .student_ui h3 {
-            font-family: roboto-bold;
-            color: grey;
-            font-size: 19px;
-            margin: 40px 0 0 30px;
+        .box img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 4px;
         }
 
-        .student_ui p {
-            font-family: roboto-bold;
-            color: black;
-            font-size: 20px;
-            margin: 0 0 0 30px;
-            padding-top: 0px;
-            display:inline;
-        }
-
-        .student_ui svg{
-            margin:-8px 0 0 ;
-        }
-
-    /* Container that will scroll horizontally */
-    .overall {
-        margin: 5px 0 0 17px;
-        padding-top: 30px;
-        display: flex; 
-        overflow-x: auto; 
-        overflow-y: hidden; 
-        white-space: nowrap;
+    .container > :last-child img {
+        width: 90%; /* Set the width to 60% of the div */
+        height: 70%; /* Keep the aspect ratio intact */
+        object-fit: contain; /* Ensure the image fits neatly */
+    }
+    .container > :nth-child(1) {
+        grid-column: 1 / -1; /* First div spans across all columns (1 row) */
     }
 
-    /* Styling for each item in the scrolling container */
-    .others, .main_page {
-        font-family: 'Roboto Medium' !important;
-        background-color: white;
-        border-radius: 7px !important;
-        border: 1.2px solid black !important;
-        padding: 4px 9px 4px 9px !important;
-        font-size: 14px !important;
-        margin: 0 0 0 10px !important;
-        height: 30px;
+    .container > :nth-child(2),
+    .container > :nth-child(3) {
+        /* The second and third divs will be in the same row */
     }
 
-
-    /* Specific styling for the first item */
-    .main_page {
-        background-color: #1D6CB5;
-        color: white !important;
-        border: 1.2px solid #1D6CB5 !important;
+    .container > :nth-child(4) {
+        grid-column: 1 / -1; /* Fourth div spans across all columns (1 row) */
     }
-    /* Static container that shouldn't scroll */
-    .main_videos {
-        overflow: hidden;
+
+    .container > :nth-child(5) {
+        grid-column: 1 / -1; /* Fifth div spans across all columns (1 row) */
+    }
+
+    .title-background {
+        position: absolute; /* Position it relative to the outer div */
+        bottom: 0;
+        left: 0;
         width: 100%;
-        padding: 20px;
-        background-color: #f0f0f0;
+        height: 24%;
+        background-color: rgba(29, 112, 183, 0.8);
+        border-radius: 4px;
+        color: white;
         display: flex;
-        flex-direction: column; /* Align items in a column */
-        align-items: center; /* Center items horizontally */
+        align-items: center;
     }
 
-    .video-container {
-        margin: 30px 0; /* Adjust top and bottom margins */
-        width: 100%; /* Make sure each video container takes full width (or adjust as needed) */
-        max-width: 600px; 
-    }
-
-    .video-container video{
-        border-radius: 8px;
-        width: 100%;
-        margin: 4px 0 25px 0;
-    }
-
-    .video_txt {
-        background-color: #FA5A5A;
-        padding: 4px;
-        border-radius: 10px;
-        line-height: 1.15;
-        text-align: center;
-    }
-
-        .video_txt p {
-            font-family: robotoslab-regular;
-            font-size: 11px;
+        .title-background p {
+            color: white;
+            font-family: roboto-medium;
+            font-size: 20px;
+            padding-top: 13px;
+            padding-left: 25px;
         }
-    
-     /*federations*/
-    .all { /*
-* Created with https://www.css-gradient.com
-* Gradient link: https://www.css-gradient.com/?c1=ffffff&c2=b7b7b7&gt=l&gd=dtt
-*/
-        background: #FFFFFF;
-        background: linear-gradient(180deg, #FFFFFF, #B7B7B7);
+
+    .container .box:nth-child(2) .title-background,
+    .container .box:nth-child(3) .title-background {
+        justify-content: center; /* Center text horizontally */
+        padding-right: 0px;
     }
+
+        .container .box:nth-child(2) .title-background p,
+        .container .box:nth-child(3) .title-background p {
+            color: white;
+            padding-left: 0px;
+            padding-top: 0px;
+            font-size: 16px;
+            margin: 0;
+        }
+
+    .menu {
+        position:absolute;
+        margin-top: 10px;
+        height:550px;
+        width:100%;
+        background-color: rgba(29, 112, 183, 1);
+        display: flex; /* Enable flexbox */
+        flex-direction: column; /* Align items in a row */
+        justify-content: space-around; /* Space items evenly */
+        align-items:center;
+        padding-top:10px;
+        z-index:1;
+    }
+
+    .flags.selected {
+        border: 5px solid green;
+    }
+
+    .contact p {
+        color: white;
+        font-size: 24px;
+        font-family: roboto-medium;
+        border: 2px solid white;
+        padding: 10px;
+        border-radius:10px;
+    }
+
+    /*Contact*/
+
+    .container-form {
+        width: 80%;
+        max-width: 600px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+    }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+    button {
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    /*Partners*/
+
     .bottom {
         height: auto; /* Set to auto to accommodate content height */
         width: 100%;
@@ -647,6 +308,7 @@ h1:focus {
         padding-left: 10%;
         margin-right: 10px;
     }
+
     .scholas {
         display: flex;
         justify-content: center;
@@ -654,7 +316,7 @@ h1:focus {
         width: 100%; /* Container width */
         height: auto; /* Container height */
         overflow: hidden;
-        padding-bottom:10px;
+        padding-bottom: 10px;
         background-color: white;
         border-radius: 2%;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -678,7 +340,7 @@ h1:focus {
         justify-content: center;
         align-items: center;
         width: 100%; /* Container width */
-        height:110px; /* Container height */
+        height: 110px; /* Container height */
         overflow: hidden;
         padding-bottom: 10px;
         background-color: white;
@@ -720,17 +382,19 @@ h1:focus {
             text-align: center;
         }
 
-        .frb p, .ssf p, .scholas p{
+        .frb p, .ssf p, .scholas p {
             padding-top: 15px;
         }
 
-        .logo p{
-            margin-bottom:10px;
-        }
-        .fpi p{
-            padding-top: 10px;
-        }
-        /*Strategies&Objectives*/
+    .logo p {
+        margin-bottom: 10px;
+    }
+
+    .fpi p {
+        padding-top: 10px;
+    }
+
+    /*Strategies&Objectives*/
     .b4c-container {
         font-family: robotoslab-regular;
         line-height: 1.4;
@@ -780,7 +444,7 @@ h1:focus {
 
         .b4c-container-wkplan .wp {
             margin-bottom: 30px;
-            margin-top:15px;
+            margin-top: 15px;
             padding: 15px;
             border-left: 5px solid #2980b9;
             background-color: #fff;
@@ -810,59 +474,6 @@ h1:focus {
             .b4c-container-wkplan ul li {
                 margin-bottom: 10px;
             }
-
-         /*Contact*/
-    .contact-container {
-        max-width: 600px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-        text-align: center;
-    }
-
-    .contact-info {
-        margin-bottom: 20px;
-    }
-
-        .contact-info p {
-            margin: 5px 0;
-        }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    label {
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    button {
-        background-color: #5cb85c;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-        button:hover {
-            background-color: #4cae4c;
-        }
 }
 
 @font-face {

@@ -1,4 +1,4 @@
-﻿@page "/gallery/{selectedButtonIndex:int}"
+﻿@page "/partners/{selectedButtonIndex:int}"
 @inject NavigationManager NavigationManager
 
 <div class="top-part">
@@ -10,7 +10,83 @@
     </g></g></g></g></svg>
 </div>
 
-<div>Coming Soon...</div>
+ <div class="bottom">
+        <div class="scholas">
+            <a class="aclass" href="https://scholasoccurrentes.org/en/">
+                <img src="./scholas.png" alt="scholasoccurrentes" />
+            </a>
+        @if (selectedButtonIndex == 1)
+        {
+                    <p><strong>Scholas Occurrentes</strong> este o organizație internațională de drept pontifical, finanțată de Papa Francisc. Prezentă cu rețeaua sa în 190 de țări, integrează mai mult de 400.000 de centre educaționale și ajunge la mai mult de un milion de copii și tineri din întreaga lume. Misiunea sa este de a răspunde chemării de a crea o cultură a întâlnirii, aducând tinerii împreună într-o educație care generează sens.</p>
+        }
+        else if (selectedButtonIndex == 2)
+        {
+                    <p>
+                        <strong>Scholas</strong> è un'organizzazione internazionale di diritto pontificio, finanziata da Francesco Papa. Presente con la sua rete in 190 Paesi, integra più di 400.000 centri educativi e raggiunge più di un milione di bambini e giovani in tutto il mondo. La sua missione è rispondere alla chiamata a creare una cultura dell'incontro, unendo i giovani in un'educazione che genera significato.
+                    </p>
+        }
+        else if (selectedButtonIndex == 3)
+        {
+                    <p>
+                        <strong>Scholas</strong> es una organización internacional de Derecho Pontificio, financiada por el Papa Francisco. Presente con su red en 190 países, integrando más de 400.000 centros educativos y llegando a más de un millón de niños y jóvenes de todo el mundo. Su misión es responder a la llamada a crear una cultura del encuentro, reuniendo a los jóvenes en una educación generadora de sentido.
+                    </p>
+        }
+        else
+        {
+                    <p>
+                        <strong>Scholas</strong> is an international organization of Pontifical Right, funded by Francis the Pope. Present with its network in 190 countries, integrating more than 400,000 educational centers and reaching more than one million children and young people around the world. Its mission is to respond to the call to create a culture of encounter, bringing young people together in an education that generates meaning.    
+                    </p>
+        }
+            </div>
+
+        <div class="fpi">
+            <a class="aclass" href="https://www.fpi.it/">
+                <img src="./fpi_logo.png" alt="fpi" />
+            </a>
+        @if (selectedButtonIndex == 1)
+        {
+                    <p><strong> Federația Italiană de Box (FPI) </strong>
+                         , fondată în 1916, este o asociație non-profit cu personalitate juridică. Este recunoscută, în scopuri sportive, de Consiliul Național al C.O.N.I. și este formată din asociațiile și societățile care practică boxul, a căror cerere a fost acceptată de Consiliul Federal. FPI are ca scop promovarea, organizarea, disciplinarea, reglementarea, propagandă, dezvoltarea și implementarea programelor de pregătire pentru sportivi și tehnicieni
+                    </p>
+        }
+        else if (selectedButtonIndex == 2)
+        {
+                    <p>
+                        <strong>La Federación Italiana de Boxeo (FPI)</strong> , fundada en 1916, es una asociación sin ánimo de lucro dotada de personalidad jurídica. Está reconocida, a efectos deportivos, por el Consejo Nacional del C.O.N.I. y está formada por las Asociaciones y Sociedades que practican el boxeo, cuya solicitud ha sido aceptada por el Consejo Federal. La FPI tiene por objeto promover, organizar, disciplinar, reglamentar, propagandizar, desarrollar y ejecutar programas de formación de deportistas y técnicos
+                    </p>
+        }
+        else if (selectedButtonIndex == 3)
+        {
+                    <p>
+                        <strong>La Federación Italiana de Boxeo (FPI)</strong> , fundada en 1916, es una asociación sin ánimo de lucro dotada de personalidad jurídica. Está reconocida, a efectos deportivos, por el Consejo Nacional del C.O.N.I. y está formada por las Asociaciones y Sociedades que practican el boxeo, cuya solicitud ha sido aceptada por el Consejo Federal. La FPI tiene por objeto promover, organizar, disciplinar, reglamentar, propagandizar, desarrollar y ejecutar programas de formación de deportistas y técnicos
+                    </p>
+        }
+        else
+        {
+            <p>
+                <strong>The Italian Boxing Federation (FPI)</strong> , founded in 1916, is a non-profit association with legal personality. It is recognized, for sporting purposes, by the National Council of the C.O.N.I. and is made up of the Associations and Societies that practice boxing, whose application has been accepted by the Federal Council. The FPI aims to promote, organize, discipline, regulate, propagandize, develop and implement training programs for athletes and technician
+            </p>
+        }
+        </div>
+        <div class="ssf">
+            <a class="aclass" href="https://www.sportsenzafrontiere.it/">
+                <img src="./ssf.jpg" alt="sportsenzafrontiere" />
+            </a>
+            <p>Sport Senza Frontiere</p>
+        </div>
+        <div class="logo">
+            <a class="aclass" href="https://feboxeo.es/">
+                <img src="./spanish.jpg" alt="feboxeo" />
+            </a>
+            <p>Spanish Boxing Federation</p>
+        </div>
+        <div class="frb">
+            <a class="aclass" href="https://frbox.eu/">
+                <img src="./frbox.png" alt="frbox" />
+            </a>
+            <p>Romanian Boxing Federation</p>
+        </div>
+    </div>
 @code {
     [Parameter]
     public int selectedButtonIndex { get; set; }
