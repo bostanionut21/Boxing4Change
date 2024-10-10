@@ -115,8 +115,5 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0" />
     </ItemGroup>
-	<ItemGroup>
-	  <Folder Include="MauiPages\" />
-	</ItemGroup>
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionMockupHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 </Project>
