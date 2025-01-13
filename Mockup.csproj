@@ -25,18 +25,32 @@
         <ApplicationTitle>Boxing4Change</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId> com.companyname.mockup</ApplicationId>
+        <ApplicationId>com.companyname.boxing4change</ApplicationId>
 
         <!-- Versions -->
         <ApplicationDisplayVersion>6.4</ApplicationDisplayVersion>
         <ApplicationVersion>8</ApplicationVersion>
 
-        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">17.0</SupportedOSPlatformVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
+      <MtouchLink>Full</MtouchLink>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
+      <MtouchLink>None</MtouchLink>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
+      <ProvisioningType>manual</ProvisioningType>
+      <CodesignKey>Apple Distribution: Bostan Ionut (7W9C2C42MT)</CodesignKey>
+      <CodesignProvision>Boxing4Change</CodesignProvision>
     </PropertyGroup>
 
     <ItemGroup>
@@ -112,8 +126,5 @@
 	<ItemGroup>
 		<Using Include="System.Console" Static="true" />
 	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0" />
-    </ItemGroup>
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionMockupHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 </Project>
